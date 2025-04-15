@@ -14,15 +14,17 @@ import NewPasswordUser from "@/pages/public/NewPasswordUser";
 import LayoutLogin from "@/components/layout/LayoutLogin";
 import LayoutHome from "@/components/layout/LayoutHome";
 import AdminCategory from "@/pages/auth/AdminCategory";
+import UserSettings from "@/pages/public/UserSettings";
 import AdminAuthor from "@/pages/auth/AdminAuthor";
 import BuscarSound from "@/pages/auth/BuscarSound";
 import UploadSound from "@/pages/auth/UploadSound";
 import LoginUser from "@/pages/public/LoginUser";
-import Erro404 from "@/pages/public/erro404";
+import Erro404 from "@/pages/public/Erro404";
 import Contact from "@/pages/public/Contact";
 import About from "@/pages/public/About";
 import Sound from "@/pages/public/Sound";
 import Admin from "@/pages/auth/Admin";
+
 
 function WebRoutes() {
     return (
@@ -34,12 +36,14 @@ function WebRoutes() {
                     <Route path="/" element={<Home />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/about" element={<About />} />
+
                 </Route>
 
                 <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
                     <Route path="/login" element={<LoginUser />} />
                     <Route path="/newPassword" element={<NewPasswordUser />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/userSettings" element={<UserSettings />} />
                     <Route path="/sound" element={<Sound />} />
                 </Route>
 

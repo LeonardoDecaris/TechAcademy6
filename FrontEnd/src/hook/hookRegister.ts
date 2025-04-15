@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import api from "@/service/api";
 
@@ -27,8 +26,6 @@ function useHookRegister() {
 
   const password = watch("password");
 
-  const navigate = useNavigate();
-
   const handleRegister = async (data: FormValues) => {
     try {
       await api.post("/users", {
@@ -38,7 +35,7 @@ function useHookRegister() {
         password: data.password,
         admin: false,
       });
-      navigate("/login");
+      window.location.reload();
     } catch (error) {
       alert("Error registering user.");
       console.log(error);

@@ -59,7 +59,6 @@ const Sound = () => {
             const { data } = await api.get("/items");
             setSounds(data);
         } catch (error) {
-            alert("Error when loading items");
             console.log(error);
         } finally {
             setLoading(false);
