@@ -1,4 +1,4 @@
-import logoSite from "../../assets/image/Mask.png";
+import logoSite from "@/assets/image/Mask.png";
 import logoGit from "@/assets/icons/github.svg";
 
 // link para navegação do site no header

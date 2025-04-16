@@ -9,7 +9,7 @@ type ContainerProps = {
     AOS?: string;
 };
 
-function CardHome({ title, img, btnTitle, caminho, className, AOS }: ContainerProps) {
+function Card({ title, img, btnTitle, caminho, className, AOS }: ContainerProps) {
 
     const styleContainer = "bg-white py-2 px-5 rounded-[40px] text-black font-bold transition duration-500 hover:scale-105 hover:shadow-[0px_2px_10px_rgba(255,255,255,1)] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] cursor-pointer";
 
@@ -29,4 +29,4 @@ function CardHome({ title, img, btnTitle, caminho, className, AOS }: ContainerPr
     );
 }
 
-export default CardHome;
+export default Card;

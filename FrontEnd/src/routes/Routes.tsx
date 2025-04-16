@@ -1,29 +1,29 @@
 import { BrowserRouter, Routes, Route, Outlet, useLocation } from "react-router-dom";
-import PrivateRoute from "@/components/custom/PrivateRoute";
+import PrivateRoute from "@/routes/PrivateRoute";
 
 // imports end images
 import BGLogin from "@/assets/image/BGfinal.webp";
 import background from "@/assets/image/Home.png";
 
 // imports end pages
-import Header from "@/components/custom/Header";
+import Header from "@/components/custom/navbar/Header";
 import Home from "@/pages/public/Home";
 
 // imports end layout
 import NewPasswordUser from "@/pages/public/NewPasswordUser";
 import LayoutLogin from "@/components/layout/LayoutLogin";
 import LayoutHome from "@/components/layout/LayoutHome";
-import AdminCategory from "@/pages/auth/AdminCategory";
+import AdminCategory from "@/pages/Private/AdminCategory";
 import UserSettings from "@/pages/public/UserSettings";
-import AdminAuthor from "@/pages/auth/AdminAuthor";
-import BuscarSound from "@/pages/auth/BuscarSound";
-import UploadSound from "@/pages/auth/UploadSound";
+import AdminAuthor from "@/pages/Private/AdminAuthor";
+import BuscarSound from "@/pages/Private/BuscarSound";
+import UploadSound from "@/pages/Private/UploadSound";
 import LoginUser from "@/pages/public/LoginUser";
 import Erro404 from "@/pages/public/Erro404";
 import Contact from "@/pages/public/Contact";
 import About from "@/pages/public/About";
 import Sound from "@/pages/public/Sound";
-import Admin from "@/pages/auth/Admin";
+import Admin from "@/pages/Private/Admin";
 
 
 function WebRoutes() {

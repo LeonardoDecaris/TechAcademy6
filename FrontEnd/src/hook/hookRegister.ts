@@ -8,6 +8,7 @@ import {
   validatePassword,
   validateConfirmPassword,
 } from "@/utils/UserValidation";
+import { useState } from "react";
 
 interface FormValues {
   name: string;
@@ -16,6 +17,7 @@ interface FormValues {
   password: string;
   confirmPassword: string;
 }
+
 function useHookRegister() {
   const {
     register,
@@ -25,6 +27,7 @@ function useHookRegister() {
   } = useForm<FormValues>({ mode: "onSubmit" });
 
   const password = watch("password");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleRegister = async (data: FormValues) => {
     try {
@@ -37,7 +40,7 @@ function useHookRegister() {
       });
       window.location.reload();
     } catch (error) {
-      alert("Error registering user.");
+      setErrorMessage("Error: Erro ao se resgistrar-se");
       console.log(error);
     }
   };
@@ -67,6 +70,8 @@ function useHookRegister() {
     },
     handleSubmit,
     handleRegister,
+    errorMessage,
+    setErrorMessage,
     errors,
   };
 }
