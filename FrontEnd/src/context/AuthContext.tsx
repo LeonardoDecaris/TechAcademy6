@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ token, userId, userName, login, userAdmin, logout, isAuthenticated: !!token }}>
+        <AuthContext.Provider value={{ token, userId, userName, login, logout, userAdmin, isAuthenticated: !!token }}>
             {children}
         </AuthContext.Provider>
     );
@@ -67,6 +67,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
     const context = useContext(AuthContext);
-    if (!context) throw new Error("useAuth needs to be inside the AuthProvider");
+    if (!context) {
+        throw new Error("useAuth needs to be inside the AuthProvider");
+    }
     return context;
 };

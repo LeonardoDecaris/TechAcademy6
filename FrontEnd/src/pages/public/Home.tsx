@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 
 // impor de componentes
-import CardHome from "@/components/custom/CardHome";
+import Card from "@/components/custom/global/Card";
 
 //import de imagens e videos 
 import motionBanner1 from "@/assets/videos/motionbanner1.mp4";
@@ -54,12 +54,12 @@ const Home = () => {
                 <div className="flex flex-col min-[600px]:flex-row gap-y-10 gap-x-5 ">
 
                     <div className="flex flex-col gap-[40px]">
-                        <CardHome img={banner2} title="Come and discover who we are and what our work is" btnTitle="More" caminho="/about" AOS="fade-right" />
+                        <Card img={banner2} title="Come and discover who we are and what our work is" btnTitle="More" caminho="/about" AOS="fade-right" />
                         <Link to={'/sound'}><video src={motionBanner2} className="w-full rounded-2xl shadow-[0px_2px_10px_rgba(0,0,0,0.6)]" autoPlay loop muted data-aos="fade-right" ></video></Link>
                     </div>
 
                     <div className="newsRight flex flex-col min-[600px]:flex-col-reverse gap-[40px]">
-                        <CardHome img={banner1} title="Don't just focus on the visuals, the audio is more important" btnTitle="Sound" caminho={'/sound'} AOS="fade-left" />
+                        <Card img={banner1} title="Don't just focus on the visuals, the audio is more important" btnTitle="Sound" caminho={'/sound'} AOS="fade-left" />
                         <Link to={'/sound'}><video src={motionBanner1} className="w-full rounded-2xl shadow-[0px_2px_10px_rgba(0,0,0,0.6)]" autoPlay loop muted data-aos="fade-left"></video></Link>
                     </div>
 

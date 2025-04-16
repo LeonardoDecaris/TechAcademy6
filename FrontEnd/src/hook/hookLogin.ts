@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import api from "@/service/api";
 
 import { validateEmail, validatePasswordLogin } from "@/utils/UserValidation";
+import { useState } from "react";
 
 interface FormValues {
   email: string;
@@ -19,8 +20,12 @@ function useHookLogin() {
 
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [desabledLogin, setDesabledLogin] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleLogin = async (data: FormValues) => {
+    setDesabledLogin(true);
+    setErrorMessage(null);
     try {
       const response = await api.post("/login", {
         email: data.email,
@@ -29,12 +34,13 @@ function useHookLogin() {
 
       const { token } = response.data;
       login(token);
-      alert("Login done with success!");
       navigate("/home");
       window.location.reload();
     } catch (error) {
-      alert("Error email or password.");
+      setErrorMessage("Error: Invalid email or password.");
       console.log(error);
+    } finally {
+      setDesabledLogin(false);
     }
   };
 
@@ -52,6 +58,9 @@ function useHookLogin() {
     handleSubmit,
     handleLogin,
     errors,
+    desabledLogin,
+    errorMessage,
+    setErrorMessage,
   };
 }
 

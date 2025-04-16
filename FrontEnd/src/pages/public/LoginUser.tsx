@@ -1,6 +1,6 @@
 import ImageLogin from "@/assets/image/ImagemLogin.png";
-import Register from "@/components/custom/Register";
-import Login from "@/components/custom/Login";
+import Register from "@/components/custom/authentication/Register";
+import Login from "@/components/custom/authentication/Login";
 import { useState, useEffect } from "react";
 
 function LoginUser() {

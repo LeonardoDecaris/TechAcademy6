@@ -1,9 +1,9 @@
 
-import Input from "@/components/custom/Input";
+import Input from "@/components/custom/global/Input";
 import emailjs from 'emailjs-com';
 import { useEffect } from 'react';
 import AOS from "aos";
-import GlobalButton from "@/components/custom/buttons/GlobalButton";
+import GlobalButton from "@/components/custom/global/GlobalButton";
 
 function Contact() {
     const sendEmail = (e: React.FormEvent) => {

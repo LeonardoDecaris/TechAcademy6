@@ -2,7 +2,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/compon
 import { Link } from "react-router-dom";
 
 // Import logo do usuário
-import logoUser from "../../assets/image/lucas.jpg";
+import logoUser from "@/assets/image/lucas.jpg";
 import { useAuth } from "@/context/AuthContext";
 import { useEffect, useState } from "react";
 

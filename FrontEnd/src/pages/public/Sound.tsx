@@ -1,5 +1,5 @@
-import { PaginationComponent } from "@/components/custom/ConponentesPagination";
-import ContainerSound from "@/components/custom/ContainerSond";
+import { PaginationComponent } from "@/components/custom/pagination/ConponentesPagination";
+import ContainerSound from "@/components/custom/sound/ContainerSond";
 
 import { useEffect, useState } from "react";
 import api from "@/service/api";

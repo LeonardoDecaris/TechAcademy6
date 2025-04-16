@@ -1,6 +1,6 @@
 import { useHookNewPassword } from "@/hook/hookNewPassword";
-import InputPassword from "./InputPassword";
-import GlobalButton from "./buttons/GlobalButton";
+import InputPassword from "../global/InputPassword";
+import GlobalButton from "../global/GlobalButton";
 
 const NewPassword = () => {
     const { register, errors, handleSubmit, handleNewPassword } = useHookNewPassword();

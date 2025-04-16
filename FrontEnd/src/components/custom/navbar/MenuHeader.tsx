@@ -1,9 +1,9 @@
 import { MenuButton } from "@/components/ui/Button"
-import iconsMenu from "../../assets/icons/menu.svg"
+import iconsMenu from "@/assets/icons/Menu.svg"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Link } from "react-router-dom"
 
-import logoGit from "../../assets/icons/github.svg"
+import logoGit from "@/assets/icons/github.svg"
 
 function MenuHeader() {
     return (
