@@ -1,5 +1,7 @@
+import { FormValues } from "@/interface/interfaceRerigister";
 import { useForm } from "react-hook-form";
-import api from "@/service/api";
+import api from "@/service/apiService";
+import { useState } from "react";
 
 import {
   validateName,
@@ -8,15 +10,6 @@ import {
   validatePassword,
   validateConfirmPassword,
 } from "@/utils/UserValidation";
-import { useState } from "react";
-
-interface FormValues {
-  name: string;
-  cpf: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
 
 function useHookRegister() {
   const {

@@ -1,17 +1,14 @@
-import api from "@/service/api";
-import axios from "axios";
+import { FormValues } from "@/interface/interfaceNewPassword";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import api from "@/service/apiService";
+import axios from "axios";
 
 import {
   validatePassword,
   validateConfirmPassword,
 } from "@/utils/UserValidation";
-import { useNavigate } from "react-router-dom";
-
-interface FormValues {
-  password: string;
-  confirmPassword: string;
-}
+import { useState } from "react";
 
 export function useHookNewPassword() {
   const {
@@ -23,6 +20,7 @@ export function useHookNewPassword() {
 
   const password = watch("password");
   const nevagate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleNewPassword = async (data: { password: string }) => {
     try {
@@ -35,7 +33,6 @@ export function useHookNewPassword() {
       await api.put(`/users/${userId}`, {
         password: data.password,
       });
-      alert("Cadastro realizado com sucesso!");
       nevagate("/login");
       location.reload();
     } catch (error) {
@@ -45,7 +42,7 @@ export function useHookNewPassword() {
               .map((e: { message: string }) => e.message)
               .join(", ")
           : "Erro ao cadastrar";
-        alert(errorMessage);
+        setErrorMessage(errorMessage);
       }
     }
   };
@@ -66,5 +63,7 @@ export function useHookNewPassword() {
     watch,
     errors,
     password,
+    errorMessage,
+    setErrorMessage,
   };
 }

@@ -1,5 +1,6 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Link } from "react-router-dom";
+import { styleLink } from "@/css/header";
 
 // Import logo do usuário
 import logoUser from "@/assets/image/lucas.jpg";
@@ -22,7 +23,7 @@ const UserLoginActive = () => {
         setIsAdmin(userAdmin);
     }, []);
 
-    const styleLink = 'bg-black/40 border 1 border-white || px-3 py-1.5 rounded-full || font-semibold text-white text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
+
     const styleLinkOut = 'border 1 border-red-600 || px-3 py-1.5 rounded-full || font-semibold text-red-600 text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
 
     // Animação zoom Link

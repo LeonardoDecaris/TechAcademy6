@@ -29,7 +29,7 @@ function Contact() {
                     <Input placeholder="Name" id="name" className="w-full" title="Your Name" />
                     <Input placeholder="Email" id="email" className="w-full" title="Your Email" />
                     <textarea name="message" placeholder="Escreva sua mensagem" className="bg-white/20 min-h-[300px] border-1 border-white rounded-2xl text-white p-2 placeholder:text-white"></textarea>
-                    <GlobalButton children={"Login"} buttonPosition="justify-center" />
+                    <GlobalButton children={'Next'} buttonPosition="justify-end" />
                 </form>
             </section>
         </main>
