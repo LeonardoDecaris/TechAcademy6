@@ -6,10 +6,10 @@ function Erro404() {
 
 
     return (
-        <div className="min-h-[51vh] flex flex-col gap-3 justify-center items-center">
+        <main className="min-h-[51vh] flex flex-col gap-3 justify-center items-center">
             <h1 className="font-bold text-7xl">Erro 404</h1>
             <Link to={'/'} className={styleButton}>Voltar para Home</Link>
-        </div>
+        </main>
     );
 }
 export default Erro404;

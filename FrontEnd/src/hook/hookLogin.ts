@@ -1,15 +1,11 @@
+import { FormValues } from "@/interface/interfaceLogin";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import api from "@/service/api";
-
-import { validateEmail, validatePasswordLogin } from "@/utils/UserValidation";
 import { useState } from "react";
 
-interface FormValues {
-  email: string;
-  password: string;
-}
+import { validateEmail, validatePasswordLogin } from "@/utils/UserValidation";
+import api from "@/service/apiService";
 
 function useHookLogin() {
   const {

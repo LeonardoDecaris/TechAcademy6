@@ -1,7 +1,7 @@
 import { PaginationComponent } from "@/components/custom/pagination/ConponentesPagination";
 import ContainerSound from "@/components/custom/sound/ContainerSond";
 import { useEffect, useState } from "react";
-import api from "@/service/api";
+import api from "@/service/apiService";
 import axios from "axios";
 import AOS from "aos";
 import GlobalButton from "@/components/custom/global/GlobalButton";

@@ -1,6 +1,6 @@
 import BlocoAuthorCatg from "@/components/custom/admin/BlocoAuthorCatg";
 import { useEffect, useState } from "react";
-import api from "@/service/api";
+import api from "@/service/apiService";
 import AOS from "aos";
 import GlobalButton from "@/components/custom/global/GlobalButton";
 

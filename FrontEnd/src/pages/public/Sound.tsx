@@ -2,7 +2,7 @@ import { PaginationComponent } from "@/components/custom/pagination/ConponentesP
 import ContainerSound from "@/components/custom/sound/ContainerSond";
 
 import { useEffect, useState } from "react";
-import api from "@/service/api";
+import api from "@/service/apiService";
 import AOS from "aos";
 
 interface MapAuthor {

@@ -24,16 +24,13 @@ const Header = () => {
         };
     }, []);
 
-    // ======================================================================================
-
     const MotionZoom = "hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] || hover:scale-105 transition transform duration-300 || font-semibold text-white/50 hover:text-white";
-    const MotionHeader = "animate-fade-down animate-duration-500 animate-ease-out animate-normal";
+    const MotionHeader = "backdrop-blur-xs animate-fade-down animate-duration-500 animate-ease-out animate-normal";
 
     return (
-        <div className={`px-2.5`}>
-            <header
-                className={`${MotionHeader} px-5 py-2.5 mx-auto mt-5 || flex justify-between items-center gap-5 || bg-[#232323]/40  backdrop-blur-xl || rounded-full ||| min-[1000px]:max-w-[700px]`}
-            >
+        <header className={`${MotionHeader} px-2.5`}>
+            <section className={`px-5 py-2.5 mx-auto mt-5 || flex justify-between items-center gap-5 || bg-[#232323]/40  || rounded-full || min-[1000px]:max-w-[700px]`}>
+
                 <nav className="flex items-center gap-5">
                     <Link to={"/home"}>
                         <img
@@ -42,20 +39,30 @@ const Header = () => {
                             className="w-9 rounded-full"
                         />
                     </Link>
-                    <div className="hidden min-[1000px]:flex gap-5">
-                        <Link to={"/home"} className={`${MotionZoom}`}>
-                            Home
-                        </Link>
-                        <Link to={"/sound"} className={`${MotionZoom}`}>
-                            Sound
-                        </Link>
-                        <Link to={"/contact"} className={`${MotionZoom}`}>
-                            Contact
-                        </Link>
-                        <Link to={"/about"} className={`${MotionZoom}`}>
-                            Developers
-                        </Link>
-                    </div>
+
+                    <ul className="hidden min-[1000px]:flex gap-5">
+                        <li>
+                            <Link to={"/home"} className={`${MotionZoom}`}>
+                                Home
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to={"/sound"} className={`${MotionZoom}`}>
+                                Sound
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={"/contact"} className={`${MotionZoom}`}>
+                                Contact
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={"/about"} className={`${MotionZoom}`}>
+                                Developers
+                            </Link>
+                        </li>
+                    </ul>
                 </nav>
 
                 {/* Link para User Login ou User Login Active */}
@@ -80,8 +87,8 @@ const Header = () => {
                         <MenuHeader />
                     </div>
                 </div>
-            </header>
-        </div>
+            </section>
+        </header>
     );
 };
 

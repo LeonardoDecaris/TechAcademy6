@@ -1,6 +1,7 @@
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
 import { useEffect } from "react"
 import AOS from "aos";
+
 interface PaginationProps {
     currentPage: number;
     setCurrentPage: React.Dispatch<React.SetStateAction<number>>;

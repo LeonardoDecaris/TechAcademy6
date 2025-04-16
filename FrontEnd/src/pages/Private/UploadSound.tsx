@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import Input from "@/components/custom/global/Input";
-import api from "@/service/api";
+import api from "@/service/apiService";
 import { useEffect } from "react";
 import Aos from "aos";
 import GlobalButton from "@/components/custom/global/GlobalButton";
