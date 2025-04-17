@@ -7,12 +7,12 @@ import AOS from "aos";
 import Card from "@/components/custom/global/Card";
 
 //import de imagens e videos 
-import motionBanner1 from "@/assets/videos/motionbanner1.mp4";
+import motionBanner1 from "@/assets/videos/MotionBanner1.mp4";
 import motionBanner2 from "@/assets/videos/MotionBanner2.mp4";
 import BannerAnuncio from "@/assets/videos/bannerAnuncio.mp4";
 
 import banner1 from "@/assets/image/bannerCard.webp";
-import banner2 from "@/assets/image/BannerCard2.png";
+import banner2 from "@/assets/image/bannerCard2.png";
 
 
 const Home = () => {
