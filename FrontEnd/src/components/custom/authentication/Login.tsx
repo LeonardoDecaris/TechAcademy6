@@ -4,11 +4,11 @@ import useHookLogin from "@/hook/hookLogin";
 import AlertError from "../error/AlertError";
 import Input from "../global/Input";
 
-type Props = {
+type FormProps = {
     className?: string;
 };
 
-function Login({ className = "" }: Props) {
+function Login({ className }: FormProps) {
 
     const { register, handleSubmit, errors, handleLogin, desabledLogin, errorMessage, setErrorMessage } = useHookLogin();
     const errorStyle = "text-red-500 text-sm pl-5";

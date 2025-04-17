@@ -9,8 +9,9 @@ interface PaginationProps {
 }
 
 export function PaginationComponent({ currentPage, setCurrentPage, totalPages }: PaginationProps) {
+
     useEffect(() => {
-        AOS.init({ duration: 500 });
+        AOS.init({ duration: 500, delay: 0 });
     }, []);
 
     return (

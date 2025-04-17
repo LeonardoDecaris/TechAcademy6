@@ -5,11 +5,11 @@ import AlertError from "../error/AlertError";
 import InputPassword from "../global/InputPassword";
 import GlobalButton from "../global/GlobalButton";
 
-type Props = {
+type FormProps = {
     className?: string;
 };
 
-const Register = ({ className = "" }: Props) => {
+const Register = ({ className }: FormProps) => {
 
     const { register, errors, handleSubmit, handleRegister, errorMessage, setErrorMessage } = useHookRegister();
     const errorStyle = "text-red-500 text-sm pl-5";

@@ -1,12 +1,11 @@
-import logoSite from "@/assets/image/Mask.png";
-import logoGit from "@/assets/icons/github.svg";
-
-// link para navegação do site no header
 import UserLoginActive from "./UserLoginActive";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MenuHeader from "./MenuHeader";
 import UserLogin from "./UserLogin";
+
+import logoSite from "@/assets/image/Mask.png";
+import logoGit from "@/assets/icons/github.svg";
 
 const Header = () => {
     const [isUserLogin, setIsUserLogin] = useState<boolean>(false);
