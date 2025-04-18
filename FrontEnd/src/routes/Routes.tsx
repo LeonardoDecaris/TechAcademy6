@@ -19,7 +19,7 @@ import AdminAuthor from "@/pages/Private/AdminAuthor";
 import BuscarSound from "@/pages/Private/BuscarSound";
 import UploadSound from "@/pages/Private/UploadSound";
 import LoginUser from "@/pages/public/LoginUser";
-import Erro404 from "@/pages/public/Erro404";
+import Erro404 from "@/pages/public/erro404";
 import Contact from "@/pages/public/Contact";
 import About from "@/pages/public/About";
 import Sound from "@/pages/public/Sound";

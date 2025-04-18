@@ -1,4 +1,4 @@
-import { useAudioController } from "@/hook/audioController";
+import { useAudioController } from "@/controller/audioController";
 import imagemSound from "@/assets/image/logoSoudn.png";
 
 // import favorite from "@/assets/icons/favorite.svg";
