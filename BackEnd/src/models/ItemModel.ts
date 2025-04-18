@@ -8,7 +8,7 @@ interface ItemAttributes {
   name: string;
   time: string | null;
   directory: string;
-  image: string  | null;
+  image: string | null;
   category_id: number;
   author_id: number;
   createdAt?: Date;
@@ -17,7 +17,10 @@ interface ItemAttributes {
 
 interface ItemCreationAttributes extends Optional<ItemAttributes, "id"> {}
 
-class ItemModel extends Model<ItemAttributes, ItemCreationAttributes> implements ItemAttributes {
+class ItemModel
+  extends Model<ItemAttributes, ItemCreationAttributes>
+  implements ItemAttributes
+{
   public id!: number;
   public name!: string;
   public time!: string;
@@ -28,7 +31,7 @@ class ItemModel extends Model<ItemAttributes, ItemCreationAttributes> implements
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
   public category?: CategoryModel;
-  public author?: AuthorModel; 
+  public author?: AuthorModel;
 }
 
 ItemModel.init(
@@ -70,7 +73,10 @@ ItemModel.init(
   }
 );
 
-ItemModel.belongsTo(CategoryModel, { as: "category", foreignKey: "category_id" });
+ItemModel.belongsTo(CategoryModel, {
+  as: "category",
+  foreignKey: "category_id",
+});
 ItemModel.belongsTo(AuthorModel, { as: "author", foreignKey: "author_id" });
 
 export default ItemModel;

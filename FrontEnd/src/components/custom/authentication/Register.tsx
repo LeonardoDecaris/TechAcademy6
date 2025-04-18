@@ -32,7 +32,7 @@ const Register = ({ className }: FormProps) => {
                 </section>
 
                 <section className="flex flex-col gap-1">
-                    <Input type="text" id="cpf" placeholder="CPF" {...register.cpf} />
+                    <Input type="text" id="cpf" placeholder="CPF" maxLength={11} {...register.cpf} />
                     {errors.cpf && <span className={errorStyle} data-aos="fade">{errors.cpf.message}</span>}
                 </section>
 
