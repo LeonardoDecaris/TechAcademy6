@@ -46,7 +46,7 @@ export const ButtonClose = ({ children, icons, buttonPosition, disabled, classNa
 
 export const ButtonDown = ({ children, icons, buttonPosition, disabled, className, onClick }: Props) => {
 
-    const styleLink = "bg-black/40   border 1 border-white || px-5 py-2 rounded-full || font-semibold text-white text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]";
+    const styleLink = "bg-black/40 border 1 border-white || px-5 py-2 rounded-full || font-semibold text-white text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]";
     const MotionZoom = 'drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] hover:scale-103 transition duration-200 transform';
     const styleDiv: string = "flex items-center pt-5 px-2.5";
 
