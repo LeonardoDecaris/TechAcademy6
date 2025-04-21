@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const UserLogin = () => {
+const ButtonLogin = () => {
 
     const Motion = "font-semibold text-white/50 hover:text-white  ||  hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:scale-102 trasition duration-300"
 
@@ -11,4 +11,4 @@ const UserLogin = () => {
     )
 }
 
-export default UserLogin;
+export default ButtonLogin;

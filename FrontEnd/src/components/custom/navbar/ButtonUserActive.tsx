@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import DropdownMenuWrapper from "@/components/ui/DropdownMenuWrapper";
 
-const UserLoginActive = () => {
+const ButtonUserActive = () => {
     const [userName, setUserName] = useState<string | null>(null);
     const [isAdmin, setIsAdmin] = useState<boolean>(false);
     const { logout } = useAuth();
@@ -53,4 +53,4 @@ const UserLoginActive = () => {
     );
 };
 
-export default UserLoginActive;
+export default ButtonUserActive;

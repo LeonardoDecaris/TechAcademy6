@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 
 import imageDev2 from '@/assets/image/leonado.png';
 import imageDev from '@/assets/image/lucas.jpg';
 import logoGit from "@/assets/icons/github.svg";
 
+import { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 function About() {
 

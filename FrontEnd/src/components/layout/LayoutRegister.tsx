@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import spriner from "@/assets/image/Radial Glass@1-1920x945 (2).png"
+import spriner from "@/assets/image/Radial Glass@1-1920x945 (1).webp"
 
 type LayoutProps = {
     children: React.ReactNode;
@@ -15,6 +15,7 @@ const LayoutRegister: React.FC<LayoutProps> = ({ children, backgroundImage }) =>
         document.body.style.overflow = "hidden";
         document.body.style.height = "100%";
         document.body.style.width = "100%";
+
         document.body.style.backgroundImage = `url('${backgroundImage}')`;
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundPosition = "center";
@@ -23,6 +24,7 @@ const LayoutRegister: React.FC<LayoutProps> = ({ children, backgroundImage }) =>
         document.documentElement.style.padding = "0";
         document.documentElement.style.height = "100%";
         document.documentElement.style.width = "100%";
+
 
         return () => {
             document.body.style.overflow = "";
@@ -62,7 +64,7 @@ const LayoutRegister: React.FC<LayoutProps> = ({ children, backgroundImage }) =>
                     @keyframes fadeIn {
                         from {
                             opacity: 0;
-                            transform: translateY(3 0px);
+                            transform: translateY(30px);
                         }
                         to {
                             opacity: 1;

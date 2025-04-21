@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
 import { PaginationComponent } from "@/components/custom/pagination/ConponentesPagination";
 import ComponentSound from "@/components/custom/sound/ComponentSond";
-import AOS from "aos";
 import useHookGetAllSound from "@/hook/sound/hookGetAllSound";
 import Loading from "@/components/custom/global/Loading";
-import buscar from "@/assets/icons/search.svg";
 import Search from "@/components/custom/global/Search";
+import buscar from "@/assets/icons/search.svg";
+
+import { useState, useEffect } from "react";
+import AOS from "aos";
 
 const BuscarSound = () => {
 

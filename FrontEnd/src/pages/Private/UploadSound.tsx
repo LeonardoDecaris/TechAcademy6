@@ -1,7 +1,3 @@
-import { Controller } from "react-hook-form";
-import { useEffect } from "react";
-import Aos from "aos";
-
 import useHookGetAllCategory from "@/hook/Categoary/hookGetAllCategory";
 import useHookGetAllAuthor from "@/hook/author/hookGetAllAuthor";
 import useHookUploadSound from "@/hook/sound/hookUploadSound";
@@ -9,6 +5,10 @@ import useHookUploadSound from "@/hook/sound/hookUploadSound";
 import GlobalButton from "@/components/custom/global/GlobalButton";
 import ComponentSelect from "@/components/custom/global/Select";
 import Input from "@/components/custom/global/Input";
+
+import { Controller } from "react-hook-form";
+import { useEffect } from "react";
+import Aos from "aos";
 
 function UploadSound() {
 
@@ -26,7 +26,7 @@ function UploadSound() {
 
     return (
         <form className="flex flex-col gap-4 max-w-[600px] py-24 mx-auto" onSubmit={handleSubmit(handleSound)} data-aos="fade-up" >
-            <h2 className="text-4xl pb-4">Upload Sound</h2>
+            <h2 className="text-4xl pb-4 font-medium">Upload Sound</h2>
 
             <section>
                 <Input id="name" type="text" placeholder="Nome" {...register.name} />

@@ -2,30 +2,30 @@ import { BrowserRouter, Routes, Route, Outlet, useLocation } from "react-router-
 import PrivateRoute from "@/routes/PrivateRoute";
 
 // imports end images
-import BGLogin from "@/assets/image/GitHub.png";
-import background from "@/assets/image/Home.png";
-import Login from "@/assets/image/HomeGit.png";
+import BgGitHub from "@/assets/image/GitHub.webp";
+import background from "@/assets/image/Home.webp";
+import BgLogin from "@/assets/image/HomeGit.webp";
 
 // imports end pages
 import Header from "@/components/custom/navbar/Header";
 import Home from "@/pages/public/Home";
 
 // imports end layout
-import NewPasswordUser from "@/pages/public/NewPasswordUser";
+import LayoutRegister from "@/components/layout/LayoutRegister";
+import NewPasswordUser from "@/pages/public/NewPassword";
 import LayoutLogin from "@/components/layout/LayoutLogin";
-import LayoutHome from "@/components/layout/LayoutHome";
 import AdminCategory from "@/pages/Private/AdminCategory";
+import LayoutHome from "@/components/layout/LayoutHome";
 import UserSettings from "@/pages/public/UserSettings";
 import AdminAuthor from "@/pages/Private/AdminAuthor";
 import BuscarSound from "@/pages/Private/BuscarSound";
 import UploadSound from "@/pages/Private/UploadSound";
-import LoginUser from "@/pages/public/LoginUser";
+import Login from "@/pages/public/Login";
 import Erro404 from "@/pages/public/erro404";
 import Contact from "@/pages/public/Contact";
+import Admin from "@/pages/Private/Admin";
 import About from "@/pages/public/About";
 import Sound from "@/pages/public/Sound";
-import Admin from "@/pages/Private/Admin";
-import LayoutRegister from "@/components/layout/LayoutRegister";
 
 
 function WebRoutes() {
@@ -41,16 +41,15 @@ function WebRoutes() {
 
                 </Route>
 
-                <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
-
+                <Route element={<LayoutLogin backgroundImage={BgGitHub}><Outlet /></LayoutLogin>}>
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/userSettings" element={<UserSettings />} />
                     <Route path="/sound" element={<Sound />} />
                 </Route>
 
-                <Route element={<LayoutRegister backgroundImage={Login} ><Outlet /></LayoutRegister>}>
+                <Route element={<LayoutRegister backgroundImage={BgLogin} ><Outlet /></LayoutRegister>}>
                     <Route path="/newPassword" element={<NewPasswordUser />} />
-                    <Route path="/login" element={<LoginUser />} />
+                    <Route path="/login" element={<Login />} />
                 </Route>
 
 

@@ -1,6 +1,6 @@
+import useHookRegister from "@/hook/authentication/hookRegister";
 import InputPassword from "../global/InputPassword";
 import GlobalButton from "../global/GlobalButton";
-import useHookRegister from "@/hook/authentication/hookRegister";
 import AlertError from "../error/AlertError";
 import Input from "../global/Input";
 
@@ -12,14 +12,14 @@ type FormProps = {
     className?: string;
 };
 
-const Register = ({ className }: FormProps) => {
+const FormRegister = ({ className }: FormProps) => {
 
     const { register, errors, handleSubmit, handleRegister, errorMessage, setErrorMessage } = useHookRegister();
     const errorStyle = "text-red-500 text-sm pl-5";
 
     useEffect(() => {
         Aos.init({ duration: 500, delay: 0 });
-    })
+    }, [])
 
     return (
         <div>
@@ -57,4 +57,4 @@ const Register = ({ className }: FormProps) => {
     );
 }
 
-export default Register;
+export default FormRegister;

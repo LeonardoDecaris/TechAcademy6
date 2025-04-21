@@ -1,7 +1,7 @@
+import useHookLogin from "@/hook/authentication/hookLogin";
 import InputPassword from "../global/InputPassword";
 import GlobalButton from "../global/GlobalButton";
 import AlertError from "../error/AlertError";
-import useHookLogin from "@/hook/authentication/hookLogin";
 import Input from "../global/Input"
 
 import { useEffect } from "react";
@@ -11,14 +11,14 @@ type FormProps = {
     className?: string;
 };
 
-function Login({ className }: FormProps) {
+function FormLogin({ className }: FormProps) {
 
     const { register, handleSubmit, errors, handleLogin, desabledLogin, errorMessage, setErrorMessage } = useHookLogin();
     const errorStyle = "text-red-500 text-sm pl-5";
 
     useEffect(() => {
         Aos.init({ duration: 500, delay: 0 });
-    })
+    }, [])
 
     return (
         <div>
@@ -42,4 +42,4 @@ function Login({ className }: FormProps) {
     );
 }
 
-export default Login;
+export default FormLogin;

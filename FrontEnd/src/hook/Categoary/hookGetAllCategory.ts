@@ -1,6 +1,6 @@
-import api from "@/service/apiService";
-import { useCallback, useState } from "react";
 import { Item } from "@/interface/category/InterfaceCategory";
+import { useCallback, useState } from "react";
+import api from "@/service/apiService";
 
 function useHookGetAllCategory() {
   const [category, setcategory] = useState<Item[]>([]);

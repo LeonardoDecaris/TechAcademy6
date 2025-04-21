@@ -1,10 +1,8 @@
+import FormNewPassword from "@/components/custom/authentication/FormNewPassword";
 
-import NewPassword from "@/components/custom/authentication/NewPassword";
+function NewPassword() {
 
-function NewPasswordUser() {
-
-    // animation end form
-    const MotionForm = "animate-fade-left animate-duration-500 animate-ease-out animate-normal"
+    const MotionForm = "animate-fade-up animate-duration-500 animate-ease-out animate-normal"
     const MotionContainer = "animate-fade-up animate-duration-500 animate-ease-out animate-normal || shadow-[0_0_8px_rgba(0,0,0,0.6)]"
 
     return (
@@ -13,11 +11,12 @@ function NewPasswordUser() {
 
                 <div className={`w-full ${MotionForm} animate-delay-100 `}>
                     <h2 className="max-w-[400px] m-auto text-4xl font-bold text-center pb-12" style={{ letterSpacing: "10px" }}>NEW PASSWORD</h2>
-                    <NewPassword />
+                    <FormNewPassword />
                 </div>
+
             </section>
         </main >
     );
 }
 
-export default NewPasswordUser;
+export default NewPassword;

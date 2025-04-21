@@ -1,11 +1,12 @@
-import UserLoginActive from "./UserLoginActive";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MenuHeader from "./MenuHeader";
-import UserLogin from "./UserLogin";
 
-import logoSite from "@/assets/image/Mask.png";
+import ButtonUserActive from "./ButtonUserActive";
+import ButtonLogin from "./ButtonLogin";
+import MenuHeader from "./MenuHeader";
+
 import logoGit from "@/assets/icons/github.svg";
+import logoSite from "@/assets/image/Mask.png";
 
 const Header = () => {
     const [isUserLogin, setIsUserLogin] = useState<boolean>(false);
@@ -81,7 +82,7 @@ const Header = () => {
                     </a>
 
                     {/* Verificação de Login */}
-                    {isUserLogin ? <UserLoginActive /> : <UserLogin />}
+                    {isUserLogin ? <ButtonUserActive /> : <ButtonLogin />}
 
                     <div className="block min-[1000px]:hidden">
                         <MenuHeader />

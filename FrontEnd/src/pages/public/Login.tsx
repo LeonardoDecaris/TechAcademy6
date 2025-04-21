@@ -1,9 +1,9 @@
-import Register from "@/components/custom/authentication/Register";
-import Login from "@/components/custom/authentication/Login";
+import FormRegister from "@/components/custom/authentication/FormRegister";
+import FormLogin from "@/components/custom/authentication/FormLogin";
 import ImageLogin from "@/assets/image/ImagemLogin.png";
 import { useState, useEffect } from "react";
 
-function LoginUser() {
+function Login() {
 
     const [isLoginActive, setIsLoginActive] = useState(true);
 
@@ -33,7 +33,7 @@ function LoginUser() {
                         <button onClick={() => setIsLoginActive(false)} className={`${!isLoginActive ? styleButtonActive : styleButtonNull} cursor-pointer`}>Register</button>
                     </div>
 
-                    {isLoginActive ? (<Login className="flex" />) : (<Register className="flex" />)}
+                    {isLoginActive ? (<FormLogin className="flex" />) : (<FormRegister className="flex" />)}
 
                 </div>
             </section>
@@ -41,4 +41,4 @@ function LoginUser() {
     );
 }
 
-export default LoginUser;
+export default Login;

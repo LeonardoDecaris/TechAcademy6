@@ -1,10 +1,12 @@
 import useHookUpdateUser from "@/hook/authentication/hookUpdateUser";
 import GlobalButton from "../global/GlobalButton";
 import Input from "../global/Input";
-import Aos from "aos";
-import { useEffect } from "react";
 
-const UpdateUser = () => {
+import { useEffect } from "react";
+import Aos from "aos";
+
+const FormUpdateUser = () => {
+
     const { register, errors, handleUpdadeUser, handleSubmit } = useHookUpdateUser();
     const errorStyle = "text-red-500 text-sm pl-5";
 
@@ -14,6 +16,7 @@ const UpdateUser = () => {
 
     return (
         <form className="flex flex-col w-full" onSubmit={handleSubmit(handleUpdadeUser)}>
+
             <section className="flex flex-col gap-1">
                 <Input type="text" id="name" placeholder="Username" {...register.name} />
                 {errors.name && <span className={errorStyle} data-aos="fade">{errors.name.message}</span>}
@@ -24,4 +27,4 @@ const UpdateUser = () => {
     );
 };
 
-export default UpdateUser;
+export default FormUpdateUser;
