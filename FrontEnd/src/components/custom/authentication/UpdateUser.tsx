@@ -1,4 +1,4 @@
-import useHookUpdateUser from "@/hook/hookUpdateUser";
+import useHookUpdateUser from "@/hook/authentication/hookUpdateUser";
 import GlobalButton from "../global/GlobalButton";
 import Input from "../global/Input";
 import Aos from "aos";

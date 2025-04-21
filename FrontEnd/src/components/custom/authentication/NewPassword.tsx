@@ -1,4 +1,4 @@
-import { useHookNewPassword } from "@/hook/hookNewPassword";
+import { useHookNewPassword } from "@/hook/authentication/hookNewPassword";
 import InputPassword from "../global/InputPassword";
 import GlobalButton from "../global/GlobalButton";
 import AlertError from "../error/AlertError";

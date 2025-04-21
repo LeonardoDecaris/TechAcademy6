@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import api from "@/service/apiService";
 import AOS from "aos";
 import GlobalButton from "@/components/custom/global/GlobalButton";
+import useHookPostCategory from "@/hook/Categoary/hookPostCategory";
 
 interface Item {
     id: number;
@@ -10,6 +11,7 @@ interface Item {
 }
 
 function AdminCategory() {
+    const { handlecategory, setCreateName } = useHookPostCategory();
 
     const styleInput = "w-full bg-white/20 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
     const styleForm = "flex flex-col gap-2.5 w-full";
@@ -20,7 +22,6 @@ function AdminCategory() {
 
     const [updateId, setUpdateId] = useState<number | string>("");
     const [deleteId, setDeleteId] = useState<number | string>("");
-    const [createName, setCreateName] = useState("");
     const [updateName, setUpdateName] = useState("");
 
     useEffect(() => {
@@ -47,21 +48,6 @@ function AdminCategory() {
         }
     };
 
-    // ===========================================================================================
-
-    const handleSound = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            await api.post("/categories", { name: createName });
-            alert("Registro realizado com sucesso!");
-            location.reload();
-        } catch (error) {
-            console.log(error);
-            alert("Erro ao realizar o registro.");
-        }
-    };
-
-    // ===========================================================================================
 
     const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -102,12 +88,11 @@ function AdminCategory() {
 
                 <div className="w-full" data-aos="fade-up">
                     <label>Create Category</label>
-                    <form onSubmit={handleSound} className={styleForm}>
+                    <form onSubmit={handlecategory} className={styleForm}>
                         <input
                             type="text"
                             placeholder="Name Category"
                             className={styleInput}
-                            value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
                         <GlobalButton children={"Login"} buttonPosition="justify-center" />

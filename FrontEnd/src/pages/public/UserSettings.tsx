@@ -2,8 +2,8 @@ import { ButtonClose, ButtonDown } from "@/components/custom/global/GlobalButton
 import Logouser from "@/assets/image/lucas.jpg";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import useHookDelete from "@/hook/hookDeleteUser";
-import useHookGetUser from "@/hook/hookGetUser";
+import useHookDelete from "@/hook/authentication/hookDeleteUser";
+import useHookGetUser from "@/hook/authentication/hookGetUser";
 import UpdateUser from "@/components/custom/authentication/UpdateUser";
 import Loading from "@/components/custom/global/Loading";
 

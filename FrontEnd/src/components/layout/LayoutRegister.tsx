@@ -45,7 +45,7 @@ const LayoutRegister: React.FC<LayoutProps> = ({ children, backgroundImage }) =>
                     objectFit: "cover",
                     zIndex: -1,
                     opacity: 0,
-                    animation: "fadeIn 800ms ease-in-out forwards",
+                    animation: "fadeIn 800ms ease-out forwards",
                     userSelect: "none",
                     pointerEvents: "none",
                 }}
@@ -62,9 +62,11 @@ const LayoutRegister: React.FC<LayoutProps> = ({ children, backgroundImage }) =>
                     @keyframes fadeIn {
                         from {
                             opacity: 0;
+                            transform: translateY(3 0px);
                         }
                         to {
                             opacity: 1;
+                            transform: translateY(0);
                         }
                     }
                 `}

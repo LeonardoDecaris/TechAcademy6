@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route, Outlet, useLocation } from "react-router-
 import PrivateRoute from "@/routes/PrivateRoute";
 
 // imports end images
-import BGLogin from "@/assets/image/BGfinal.webp";
+import BGLogin from "@/assets/image/GitHub.png";
 import background from "@/assets/image/Home.png";
+import Login from "@/assets/image/HomeGit.png";
 
 // imports end pages
 import Header from "@/components/custom/navbar/Header";
@@ -47,7 +48,7 @@ function WebRoutes() {
                     <Route path="/sound" element={<Sound />} />
                 </Route>
 
-                <Route element={<LayoutRegister backgroundImage={background} ><Outlet /></LayoutRegister>}>
+                <Route element={<LayoutRegister backgroundImage={Login} ><Outlet /></LayoutRegister>}>
                     <Route path="/newPassword" element={<NewPasswordUser />} />
                     <Route path="/login" element={<LoginUser />} />
                 </Route>

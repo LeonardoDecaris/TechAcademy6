@@ -1,6 +1,6 @@
 import InputPassword from "../global/InputPassword";
 import GlobalButton from "../global/GlobalButton";
-import useHookRegister from "@/hook/hookRegister";
+import useHookRegister from "@/hook/authentication/hookRegister";
 import AlertError from "../error/AlertError";
 import Input from "../global/Input";
 

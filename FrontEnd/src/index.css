@@ -127,6 +127,10 @@
 
     /* color primary the web site */
     background-color: #040404;
+
+    [data-scroll-locked] {
+      overflow: hidden !important;
+    }
   }
 }
 

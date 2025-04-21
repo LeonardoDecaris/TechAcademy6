@@ -1,7 +1,7 @@
 import InputPassword from "../global/InputPassword";
 import GlobalButton from "../global/GlobalButton";
 import AlertError from "../error/AlertError";
-import useHookLogin from "@/hook/hookLogin";
+import useHookLogin from "@/hook/authentication/hookLogin";
 import Input from "../global/Input"
 
 import { useEffect } from "react";

@@ -1,24 +1,17 @@
-import BlocoAuthorCatg from "@/components/custom/admin/BlocoAuthorCatg";
+// import BlocoAuthorCatg from "@/components/custom/admin/BlocoAuthorCatg";
 import GlobalButton from "@/components/custom/global/GlobalButton";
 import api from "@/service/apiService";
 import AOS from "aos";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-interface Item {
-    id: number;
-    name: string;
-}
+
 
 function AdminCategory() {
 
     const styleInput = "w-full bg-white/20 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
     const styleForm = "flex flex-col gap-2.5 w-full";
     const styleHr = "h-[3px] rounded-full";
-
-    const [loading, setLoading] = useState(false);
-    const [items, setItems] = useState<Item[]>([]);
-
 
     const [updateId, setUpdateId] = useState<number | string>("");
     const [deleteId, setDeleteId] = useState<number | string>("");
@@ -27,27 +20,12 @@ function AdminCategory() {
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
-        getCategories();
     }, []);
 
-    if (loading) {
-        return <div className="text-center text-lg font-bold py-10">Carregando...</div>;
-    }
 
     // ============================================================================================== //
 
-    const getCategories = async () => {
-        setLoading(true);
-        try {
-            const { data } = await api.get("/authors");
-            setItems(data);
-        } catch (error) {
-            console.log(error);
-            alert("Unknown error!");
-        } finally {
-            setLoading(false);
-        }
-    };
+
 
     // ============================================================================================== //
 
@@ -161,9 +139,8 @@ function AdminCategory() {
             <div className="py-7"><hr className={styleHr} /></div>
 
             <section className="flex flex-wrap justify-center items-center gap-3">
-                {items.map(item => (
-                    <BlocoAuthorCatg key={item.id} Id={item.id} Name={item.name} />
-                ))}
+
+                {/* <BlocoAuthorCatg key={item.id} Id={item.id} Name={item.name} /> */}
             </section>
 
         </main>

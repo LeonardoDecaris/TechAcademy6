@@ -32,7 +32,7 @@ const UserLoginActive = () => {
     const MotionZoom = 'drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] hover:scale-103 transition duration-200 transform || font-bold';
 
     return (
-        <DropdownMenuWrapper >
+        <DropdownMenuWrapper>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <button className="flex items-center gap-1.5 || px-2.5 py-2 || bg backdrop-blur-xl rounded-full bg-white/5 focus:outline-none || border-white/40 border-1 || font-semibold text-[14px] || shadow-[0_0_10px_rgba(255,255,255,0.1)]">

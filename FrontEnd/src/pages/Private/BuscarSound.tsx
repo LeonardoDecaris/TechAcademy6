@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { PaginationComponent } from "@/components/custom/pagination/ConponentesPagination";
-import ContainerSound from "@/components/custom/sound/ContainerSond";
+import ComponentSound from "@/components/custom/sound/ComponentSond";
 import AOS from "aos";
 import useHookGetAllSound from "@/hook/sound/hookGetAllSound";
 import Loading from "@/components/custom/global/Loading";
@@ -50,7 +50,7 @@ const BuscarSound = () => {
                             </>
                         )}
                         {paginatedSounds.map((item, index) => (
-                            <ContainerSound
+                            <ComponentSound
                                 key={index}
                                 name={item.name}
                                 author={item.author?.name}
