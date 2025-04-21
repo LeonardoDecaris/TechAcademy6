@@ -15,7 +15,7 @@ export function PaginationComponent({ currentPage, setCurrentPage, totalPages }:
     }, []);
 
     return (
-        <Pagination>
+        <Pagination data-aos="fade-up">
             <PaginationContent>
                 <PaginationItem>
                     <PaginationPrevious href="#" onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} />

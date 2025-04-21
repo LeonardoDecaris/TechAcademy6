@@ -18,7 +18,7 @@ const Register = ({ className }: FormProps) => {
     const errorStyle = "text-red-500 text-sm pl-5";
 
     useEffect(() => {
-        Aos.init({ duration: 400, delay: 0 });
+        Aos.init({ duration: 500, delay: 0 });
     })
 
     return (

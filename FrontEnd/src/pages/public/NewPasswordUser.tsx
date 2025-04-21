@@ -9,7 +9,7 @@ function NewPasswordUser() {
 
     return (
         <main className="min-h-[86vh] w-full flex justify-center items-center pt-10">
-            <section className={`w-full max-w-[500px] h-110  mb-10 p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
+            <section className={`w-full max-w-[500px] h-110  mb-10 p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-lg rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
 
                 <div className={`w-full ${MotionForm} animate-delay-100 `}>
                     <h2 className="max-w-[400px] m-auto text-4xl font-bold text-center pb-12" style={{ letterSpacing: "10px" }}>NEW PASSWORD</h2>

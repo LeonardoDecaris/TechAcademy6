@@ -1,12 +1,12 @@
 import { useAudioController } from "@/controller/audioController";
+import useHoookDeleteSound from "@/hook/sound/hookDeleteSound";
 import imagemSound from "@/assets/image/logoSoudn.png";
-
-// import favorite from "@/assets/icons/favorite.svg";
 import download from "@/assets/icons/download.svg";
-import play from "@/assets/icons/play.svg";
+import excle from "@/assets/icons/exclusesvg.svg";
 import pause from "@/assets/icons/pause.svg";
-import Waveform from "./WaveForm";
 import { useEffect, useState } from "react";
+import play from "@/assets/icons/play.svg";
+import Waveform from "./WaveForm";
 import AOS from "aos";
 
 type Props = {
@@ -15,7 +15,6 @@ type Props = {
     author: string;
     category: string;
     IdSound?: number;
-
     className1?: string;
     className2?: string;
 };
@@ -25,6 +24,8 @@ function ContainerSound({ src, name, author, category, className1, className2, I
     const SyButton = "bg-black/20 rounded-full border border-white px-2.5 py-[5px]";
     const SyButton2 = "bg-black/20 rounded-full border border-white px-2.5 py-[5px] items-center gap-3";
 
+    const { handleDelete } = useHoookDeleteSound();
+    const [AccessoDowload, setIsUserLogin] = useState<boolean>(true);
     const { audioRef, isPlaying, currentTime, duration, togglePlayPause, handleTimeUpdate, handleLoadedMetadata, handleDownload, formatTime, } = useAudioController();
 
     const handleSeekChange = (value: number) => {
@@ -32,8 +33,6 @@ function ContainerSound({ src, name, author, category, className1, className2, I
             audioRef.current.currentTime = value;
         }
     };
-
-    const [AccessoDowload, setIsUserLogin] = useState<boolean>(true);
 
     useEffect(() => {
         const checkToken = () => {
@@ -49,7 +48,6 @@ function ContainerSound({ src, name, author, category, className1, className2, I
             window.removeEventListener("storage", checkToken);
         };
     }, []);
-
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
@@ -100,10 +98,12 @@ function ContainerSound({ src, name, author, category, className1, className2, I
                     </button>
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
-                    <span>Id: {IdSound}</span>
+                    <button onClick={() => handleDelete(IdSound!)}>
+                        <img src={excle} />
+                    </button>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 

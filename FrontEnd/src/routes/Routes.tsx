@@ -24,6 +24,7 @@ import Contact from "@/pages/public/Contact";
 import About from "@/pages/public/About";
 import Sound from "@/pages/public/Sound";
 import Admin from "@/pages/Private/Admin";
+import LayoutRegister from "@/components/layout/LayoutRegister";
 
 
 function WebRoutes() {
@@ -40,12 +41,17 @@ function WebRoutes() {
                 </Route>
 
                 <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
-                    <Route path="/login" element={<LoginUser />} />
-                    <Route path="/newPassword" element={<NewPasswordUser />} />
+
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/userSettings" element={<UserSettings />} />
                     <Route path="/sound" element={<Sound />} />
                 </Route>
+
+                <Route element={<LayoutRegister backgroundImage={background} ><Outlet /></LayoutRegister>}>
+                    <Route path="/newPassword" element={<NewPasswordUser />} />
+                    <Route path="/login" element={<LoginUser />} />
+                </Route>
+
 
                 {/* Rotas privadas */}
                 <Route element={<PrivateRoute><LayoutHome backgroundImage={background}><Outlet /></LayoutHome></PrivateRoute>}>

@@ -1,8 +1,8 @@
-import GlobalButton from "../global/GlobalButton";
 import InputPassword from "../global/InputPassword";
-import useHookLogin from "@/hook/hookLogin";
+import GlobalButton from "../global/GlobalButton";
 import AlertError from "../error/AlertError";
-import Input from "../global/Input";
+import useHookLogin from "@/hook/hookLogin";
+import Input from "../global/Input"
 
 import { useEffect } from "react";
 import Aos from "aos";

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useHookDelete from "@/hook/hookDeleteUser";
 import useHookGetUser from "@/hook/hookGetUser";
 import UpdateUser from "@/components/custom/authentication/UpdateUser";
+import Loading from "@/components/custom/global/Loading";
 
 function UserSettings() {
     const { logout } = useAuth();
@@ -14,7 +15,6 @@ function UserSettings() {
 
     const styleContainerLogo: string = "bg-black/10 border-1 border-white/50 backdrop-blur-sm rounded-[12px] min-[500px]:flex gap-2 p-1.5";
     const styleLogo: string = "w-18 rounded-[6px] mx-auto min-[500px]:mx-0";
-    const styleSpan: string = "text-[24px] text-white m-auto font-bold";
 
 
 
@@ -24,7 +24,7 @@ function UserSettings() {
 
                 <div className={styleContainerLogo}>
                     {loading ? (
-                        <span className={`${styleSpan}`}>Loading...</span>
+                        <Loading />
                     ) : (
                         <>
                             <img src={Logouser} alt="pedrozo" className={`${styleLogo}`} />

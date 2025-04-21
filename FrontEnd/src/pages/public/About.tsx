@@ -4,7 +4,7 @@ import AOS from 'aos';
 
 import imageDev2 from '@/assets/image/leonado.png';
 import imageDev from '@/assets/image/lucas.jpg';
-import logoGit from "@/assets/icons/github.svg"
+import logoGit from "@/assets/icons/github.svg";
 
 
 function About() {
@@ -17,12 +17,12 @@ function About() {
     }, [])
 
     return (
-        <main className="max-w-[1220px] || py-14 px-2.5 m-auto">
+        <main className="max-w-[1220px] || pt-14 px-2.5 m-auto">
             <h2 className="text-center text-4xl font-bold || drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" data-aos="fade-up" >
                 Website developers
             </h2>
 
-            <section className='py-15 || flex flex-col gap-5'>
+            <section className='py-15 || flex flex-col gap-5 overflow-hidden'>
                 <div className={`${styleContainer}`} data-aos="fade-up">
                     <img src={imageDev} alt="Lucas Pedrozo" title='Lucas Pedrozo' className='w-72 rounded-2xl m-auto ' />
 
@@ -47,7 +47,7 @@ function About() {
                     <img src={imageDev2} alt="Lucas Pedrozo" title='Lucas Pedrozo' className='w-72 rounded-2xl m-auto' />
 
                     <div>
-                        <h3 className='text-3xl font-bold || pb-2.5'>Leonardo Nunes | Developer Back-end | BDA</h3>
+                        <h3 className='text-3xl font-bold || pb-2.5'>Leonardo Nunes | Developer Back-End | DBA</h3>
                         <p className='text-[14px]'>Olá, Sou Leonardo, também conhecido como SrVertex.
                             Desenvolvedor Junior com foco em WEB e desenvolvimento Java. Minha jornada inicia em 2019 com desenvolvimento de conteúdo de MODS para jogos, tendo nesse hobbie despertado o interesse pela área de programação e hoje assim sigo. Nessa área desapertei diversas competências, como Photoshop, CorelDRAW, Blender, Autodesk Maya, SolidWorks, Cinema4D, KeyShot, Substance Painter, Unreal, entre outras</p>
 

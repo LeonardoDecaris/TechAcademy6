@@ -22,8 +22,8 @@ function useHookUpdateUser() {
         name: data.name,
       });
       logout();
-      location.reload();
       nevagate("/home");
+      location.reload();
     } catch (error) {
       console.log(error);
     }
