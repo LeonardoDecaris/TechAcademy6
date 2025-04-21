@@ -121,12 +121,16 @@
     @apply bg-background text-foreground;
 
     /*color primary the web site */
-    color: #ffffff ;
+    color: #ffffff;
 
-    font-family:Montserrat,'arial' ;
-  
+    font-family: Montserrat, "arial";
+
     /* color primary the web site */
-    background-color: #040404; 
+    background-color: #040404;
+
+    [data-scroll-locked] {
+      overflow: hidden !important;
+    }
   }
 }
 

@@ -8,10 +8,12 @@ interface InputProps {
     id?: string;
     title?: string;
     value?: string;
+    onchange?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const InputPassword = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-    const { placeholder, className, id, title, value, ...rest } = props;
+    const { placeholder, className, id, title, value, onchange, ...rest } = props;
+
     const [visible, setVisible] = useState(false);
     const styleInput = "text-white placeholder:text-white placeholder:font-medium focus:outline-none";
 
@@ -27,6 +29,7 @@ const InputPassword = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                     id={id}
                     title={title}
                     value={value}
+                    onChange={onchange}
                     placeholder={placeholder}
                     className={`${styleInput} flex-1`}
                     ref={ref}

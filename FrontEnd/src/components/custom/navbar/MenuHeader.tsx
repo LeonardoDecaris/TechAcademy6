@@ -1,9 +1,9 @@
-import { MenuButton } from "@/components/ui/Button"
-import iconsMenu from "@/assets/icons/Menu.svg"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
+import { MenuButton } from "@/components/ui/Button"
 import { Link } from "react-router-dom"
 
 import logoGit from "@/assets/icons/github.svg"
+import iconsMenu from "@/assets/icons/Menu.svg"
 
 function MenuHeader() {
     return (
@@ -20,7 +20,7 @@ function MenuHeader() {
 
                 </SheetHeader>
                 <div className="grid gap-4 py-4">
-                    <div >
+                    <nav >
                         <ul className="flex flex-col gap-4 || text-center pb-5">
                             <li>
                                 <SheetClose asChild>
@@ -50,7 +50,7 @@ function MenuHeader() {
                             GitHub
                         </a>
 
-                    </div>
+                    </nav>
                 </div>
             </SheetContent>
         </Sheet>

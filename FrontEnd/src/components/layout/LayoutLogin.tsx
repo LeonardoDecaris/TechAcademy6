@@ -12,7 +12,7 @@ const LayoutHome: React.FC<LayoutProps> = ({ backgroundImage, children }) => {
             document.body.style.backgroundImage = `url(${backgroundImage})`;
             document.body.style.backgroundRepeat = "repeat";
             document.body.style.backgroundPosition = "center";
-            document.body.style.transition = "background-image 0.5s ease-in-out";
+            // document.body.style.transition = "background-image 0.5s ease-in-out";
         }
     }, [backgroundImage]);
 

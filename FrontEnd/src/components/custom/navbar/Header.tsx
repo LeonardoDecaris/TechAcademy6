@@ -1,12 +1,12 @@
-import logoSite from "@/assets/image/Mask.png";
-import logoGit from "@/assets/icons/github.svg";
-
-// link para navegação do site no header
-import UserLoginActive from "./UserLoginActive";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import ButtonUserActive from "./ButtonUserActive";
+import ButtonLogin from "./ButtonLogin";
 import MenuHeader from "./MenuHeader";
-import UserLogin from "./UserLogin";
+
+import logoGit from "@/assets/icons/github.svg";
+import logoSite from "@/assets/image/Mask.png";
 
 const Header = () => {
     const [isUserLogin, setIsUserLogin] = useState<boolean>(false);
@@ -25,11 +25,12 @@ const Header = () => {
     }, []);
 
     const MotionZoom = "hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] || hover:scale-105 transition transform duration-300 || font-semibold text-white/50 hover:text-white";
-    const MotionHeader = "backdrop-blur-xs animate-fade-down animate-duration-500 animate-ease-out animate-normal";
+    const StyleHeader = "bg-[#232323]/50 backdrop-blur-md rounded-full min-[1000px]:max-w-[700px] mt-5 mx-2.5 min-[1000px]:mx-auto";
+    const MotionHeader = "animate-fade-down animate-duration-500 animate-ease-out animate-normal";
 
     return (
-        <header className={`${MotionHeader} px-2.5`}>
-            <section className={`px-5 py-2.5 mx-auto mt-5 || flex justify-between items-center gap-5 || bg-[#232323]/40  || rounded-full || min-[1000px]:max-w-[700px]`}>
+        <header className={`${MotionHeader} ${StyleHeader}`}>
+            <section className={`px-5 py-2.5 flex justify-between items-center gap-5 `}>
 
                 <nav className="flex items-center gap-5">
                     <Link to={"/home"}>
@@ -81,7 +82,7 @@ const Header = () => {
                     </a>
 
                     {/* Verificação de Login */}
-                    {isUserLogin ? <UserLoginActive /> : <UserLogin />}
+                    {isUserLogin ? <ButtonUserActive /> : <ButtonLogin />}
 
                     <div className="block min-[1000px]:hidden">
                         <MenuHeader />
