@@ -35,8 +35,9 @@ const Sound = () => {
     };
 
     return (
-        <main className="px-2.5 py-10 max-w-[1220px] m-auto flex flex-col gap-10">
+        <main className="px-2.5 pt-14 max-w-[1220px] m-auto flex flex-col gap-10">
 
+            <h2 className="text-3xl not-visited:font-semibold text-center">Search Sound FX</h2>
             <Search inputValue={inputValue} onChange={(e) => setInputValue(e.target.value)} handleSearch={handleSearch} icons={buscar} />
 
             <section className="flex flex-col gap-2.5">

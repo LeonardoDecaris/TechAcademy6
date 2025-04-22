@@ -13,8 +13,8 @@ function UserSettings() {
     const { logout } = useAuth();
 
     const styleContainerLogo = "bg-black/10 border-1 border-white/50 backdrop-blur-sm rounded-[12px] min-[500px]:flex gap-2 p-1.5";
-    const styleLogo = "w-18 rounded-[6px] mx-auto min-[500px]:mx-0";
     const motion = "animate-fade-up animate-duration-500 animate-ease-out animate-normal";
+    const styleLogo = "w-18 rounded-[6px] mx-auto min-[500px]:mx-0";
     const navigate = useNavigate();
 
     return (

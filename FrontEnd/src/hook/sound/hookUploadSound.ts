@@ -7,6 +7,7 @@ function useHookUploadSound() {
     register,
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<SoundFormData>({ mode: "onSubmit" });
 
@@ -19,7 +20,8 @@ function useHookUploadSound() {
         category_id: data.category,
         directory: file.name,
       });
-      location.reload();
+
+      reset();
     } catch (error) {
       alert("Error registering sound.");
       console.log(error);
