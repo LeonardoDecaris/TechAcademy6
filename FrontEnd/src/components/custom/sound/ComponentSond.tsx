@@ -25,6 +25,7 @@ function ComponentSound({ src, name, author, category, className1, className2, I
     const SyTime = "font-light text-[0.875rem]";
     const SyButton = "bg-black/20 rounded-full border border-white px-2.5 py-[5px]";
     const SyButton2 = "bg-black/20 rounded-full border border-white px-2.5 py-[5px] items-center gap-3";
+    const motionButton = "transition-all duration-300 ease-in-out  hover:scale-110";
 
     const { handleDelete } = useHoookDeleteSound();
     const [AccessoDowload, setIsUserLogin] = useState<boolean>(true);
@@ -102,12 +103,12 @@ function ComponentSound({ src, name, author, category, className1, className2, I
                 />
 
                 <div className={`${SyButton2} ${className1}`}>
-                    <button onClick={() => { handleLoginCheck() }} disabled={!AccessoDowload}>
+                    <button onClick={() => { handleLoginCheck() }} disabled={!AccessoDowload} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8utbb)]`}>
                         <img src={download} />
                     </button>
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
-                    <button onClick={() => handleDelete(IdSound!)}>
+                    <button onClick={() => handleDelete(IdSound!)} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,0,0,0.8)]`}>
                         <img src={excle} />
                     </button>
                 </div>

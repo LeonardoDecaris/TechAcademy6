@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, Outlet, useLocation } from "react-router-
 import PrivateRoute from "@/routes/PrivateRoute";
 
 // imports end images
-import BgGitHub from "@/assets/image/GitHub.webp";
-import background from "@/assets/image/Home.webp";
-import BgLogin from "@/assets/image/HomeGit.webp";
+import BgGitHub from "@/assets/image/GitHub.png";
+import background from "@/assets/image/Home.png";
+import BgLogin from "@/assets/image/HomeGit.png";
 
 // imports end pages
 import Header from "@/components/custom/navbar/Header";

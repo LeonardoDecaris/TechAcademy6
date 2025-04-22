@@ -3,21 +3,25 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-// impor de componentes
-import Card from "@/components/custom/global/Card";
+import { ButtonDown } from "@/components/custom/global/GlobalButton";
 
-//import de imagens e videos 
-import motionBanner1 from "@/assets/videos/MotionBanner1.mp4";
-import motionBanner2 from "@/assets/videos/MotionBanner2.mp4";
 import BannerAnuncio from "@/assets/videos/bannerAnuncio.mp4";
+import motionBanner1 from "@/assets/videos/MotionBanner1.mp4";
 
-import banner1 from "@/assets/image/bannerCard.webp";
-import banner2 from "@/assets/image/bannerCard2.png";
+import bgsection from "@/assets/image/HomeGit.webp";
 
+import icons1 from "@/assets/icons/adobepremiere.png";
+import icons2 from "@/assets/icons/adobeafter.png";
+import icons3 from "@/assets/icons/adobephotoshop.png";
+import icons4 from "@/assets/icons/adobefotos.png";
+import icons5 from "@/assets/icons/figma.png";
 
-const Home = () => {
+function Home() {
 
-    const MotionButton = 'hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] || hover:scale-105 transition transform duration-300 ';
+    const MotionButton = 'hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] // hover:scale-105 transition transform duration-300 ';
+    const stylePlataform = 'flex flex-col min-[600px]:flex-row gap-5 // p-2.5 pb-5 bg-gradient-to-b from-white/10 to-black/0 border-t border-l border-r border-white/50 rounded-3xl shadow-[0px_-6px_6px_rgba(255,255,255,0.1)] ';
+    const styleH3 = 'text-2xl font-bold text-center pb-14';
+    const icons = 'w-20 hover:scale-105  ';
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
@@ -26,6 +30,7 @@ const Home = () => {
 
     return (
         <main>
+
             <section className="max-w-[1220px] px-2.5 pt-26 || min-[600px]:pt-40 mx-auto">
                 <h1 className="text-3xl min-[600px]:text-6xl font-bold text-center || max-w-[800px] m-auto pb-16 || drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]" data-aos="fade-up">
                     The Power of audioVisual Harmonic Sound
@@ -41,30 +46,52 @@ const Home = () => {
 
             </section>
 
-            <section className="py-20 min-[800px]:py-40">
+            <section className="pt-30">
                 <video src={BannerAnuncio} className="w-full" autoPlay loop muted data-aos="fade-up"></video>
             </section>
 
-            <section className="max-w-[1220px] px-2.5 pb-20 mx-auto overflow-hidden">
+            <section className="relative py-20  min-[800px]:pt-40">
 
-                <h2 className="text-2xl font-bold text-center || pb-10" data-aos="fade-up">
-                    Come discover the power of audiovisual
-                </h2>
+                <div className="absolute inset-0 -z-0"
+                    style={{
+                        backgroundImage: `url(${bgsection})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        opacity: 0.5,
+                    }}
+                />
 
-                <div className="flex flex-col min-[600px]:flex-row gap-y-10 gap-x-5 ">
+                <h3 className={`${styleH3}`} data-aos="fade-up">
+                    Venha Conhecer a melhor Plataforma de SoundFX do Brasil
+                </h3>
 
-                    <div className="flex flex-col gap-[40px]">
-                        <Card img={banner2} title="Come and discover who we are and what our work is" btnTitle="More" caminho="/about" AOS="fade-right" />
-                        <Link to={'/sound'}><video src={motionBanner2} className="w-full rounded-2xl shadow-[0px_2px_10px_rgba(0,0,0,0.6)]" autoPlay loop muted data-aos="fade-right" ></video></Link>
+                <div className="relative z-10 max-w-[1220px] px-2.5 pb-20 mx-auto">
+                    <div className={`${stylePlataform}`} data-aos="zoom-in-up">
+                        <video src={motionBanner1} className="w-full max-w-[300px] mx-auto rounded-2xl shadow-[0px_2px_10px_rgba(0,0,0,0.6)]" autoPlay loop muted ></video>
+
+                        <div className="p-2.5 min-[600px]:pt-10">
+                            <h5 className="font-semibold text-2xl pl-2.5">Sound FX</h5>
+                            <span >Temos um acervo de mais de 1000 soundFX, com uma qualidade de som incrível e com um preço acessível para todos os tipos de produtores, seja você um produtor iniciante ou um produtor profissional, temos o soundFX ideal para você.</span>
+                            <ButtonDown to={'/sound'} buttonPosition='justify-end' >SoundFX</ButtonDown>
+                        </div>
+
                     </div>
+                </div>
 
-                    <div className="newsRight flex flex-col min-[600px]:flex-col-reverse gap-[40px]">
-                        <Card img={banner1} title="Don't just focus on the visuals, the audio is more important" btnTitle="Sound" caminho={'/sound'} AOS="fade-left" />
-                        <Link to={'/sound'}><video src={motionBanner1} className="w-full rounded-2xl shadow-[0px_2px_10px_rgba(0,0,0,0.6)]" autoPlay loop muted data-aos="fade-left"></video></Link>
-                    </div>
+                <h3 className={`${styleH3}`} data-aos="fade-up">
+                    Programas que mais utilizamos para edição de som
+                </h3>
 
+                <div className="flex justify-center flex-wrap gap-10 pb-20" >
+                    <img src={icons1} className={`${icons}`} style={{ transition: 'all 0.3s ease-in-out' }} data-aos="zoom-in-up" />
+                    <img src={icons2} className={`${icons}`} style={{ transition: 'all 0.3s ease-in-out' }} data-aos="zoom-in-up" />
+                    <img src={icons3} className={`${icons}`} style={{ transition: 'all 0.3s ease-in-out' }} data-aos="zoom-in-up" />
+                    <img src={icons4} className={`${icons}`} style={{ transition: 'all 0.3s ease-in-out' }} data-aos="zoom-in-up" />
+                    <img src={icons5} className={`${icons}`} style={{ transition: 'all 0.3s ease-in-out' }} data-aos="zoom-in-up" />
                 </div>
             </section>
+
         </main >
     );
 }
