@@ -6,26 +6,29 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { ButtonDown } from "../global/GlobalButton";
 
-type Props = {
-    onClose: () => void
-}
-
-function AlertUpdateSound({ onClose }: Props) {
+function AlertUpdateSound() {
 
 
     return (
         <AlertDialog >
+            <AlertDialogTrigger asChild>
+                <ButtonDown children="up" />
+            </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Erro!</AlertDialogTitle>
+                    <AlertDialogTitle>Update Sound</AlertDialogTitle>
                     <AlertDialogDescription>
-
+                        <p>
+                            teste update soudn
+                        </p>
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel onClick={() => { onClose(); }}>Update</AlertDialogCancel>
+                    <AlertDialogCancel>Update</AlertDialogCancel>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
