@@ -10,6 +10,7 @@ import Waveform from "./WaveForm";
 import AOS from "aos";
 
 import AlertErrorDownload from "../error/AlertErrorDownload";
+import AlertUpdateSound from "../admin/AlerUpdateSound";
 
 type Props = {
     src: string;
@@ -68,6 +69,8 @@ function ComponentSound({ src, name, author, category, className1, className2, I
 
             {errorMessage && <AlertErrorDownload message={errorMessage} onClose={() => setErrorMessage(null)} />}
 
+            {<AlertUpdateSound onClose={() => void (0)} />}
+
             <div className="flex gap-2.5 min-w-[28%] min-[990px]:items-center">
                 <img src={imagemSound} alt="lucas pedrozo" className="w-15 rounded-[10px] min-[990px]:w-20" />
 
@@ -108,6 +111,9 @@ function ComponentSound({ src, name, author, category, className1, className2, I
                     </button>
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
+                    <button>
+                        Up
+                    </button>
                     <button onClick={() => handleDelete(IdSound!)} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,0,0,0.8)]`}>
                         <img src={excle} />
                     </button>
