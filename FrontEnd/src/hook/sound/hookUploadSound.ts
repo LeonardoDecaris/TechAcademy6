@@ -20,7 +20,7 @@ function useHookUploadSound() {
         category_id: data.category,
         directory: file.name,
       });
-
+      alert("Sound registered successfully!");
       reset();
     } catch (error) {
       alert("Error registering sound.");

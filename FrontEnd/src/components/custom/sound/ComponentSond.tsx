@@ -10,6 +10,8 @@ import Waveform from "./WaveForm";
 import AOS from "aos";
 
 import AlertErrorDownload from "../error/AlertErrorDownload";
+import AlertUpdateSound from "./AlertUpdateSound";
+
 
 type Props = {
     src: string;
@@ -103,13 +105,13 @@ function ComponentSound({ src, name, author, category, className1, className2, I
                 />
 
                 <div className={`${SyButton2} ${className1}`}>
-                    <button onClick={() => { handleLoginCheck() }} disabled={!AccessoDowload} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8utbb)]`}>
+                    <button onClick={() => { handleLoginCheck() }} disabled={!AccessoDowload} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]`}>
                         <img src={download} />
                     </button>
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
-
-                    <button onClick={() => handleDelete(IdSound!)} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,0,0,0.8)]`}>
+                    <AlertUpdateSound valueName={name} valueSoundId={Number(IdSound)} />
+                    <button onClick={() => handleDelete(IdSound!)} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,0,0,0.8)] cursor-pointer`}>
                         <img src={excle} />
                     </button>
                 </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -22,6 +22,7 @@ function Home() {
     const stylePlataform = 'flex flex-col min-[600px]:flex-row gap-5 // p-2.5 pb-5 bg-gradient-to-b from-white/10 to-black/0 border-t border-l border-r border-white/50 rounded-3xl shadow-[0px_-6px_6px_rgba(255,255,255,0.1)] ';
     const styleH3 = 'text-2xl font-bold text-center pb-14';
     const icons = 'w-20 hover:scale-105  ';
+    const navigate = useNavigate();
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
@@ -73,7 +74,7 @@ function Home() {
                         <div className="p-2.5 min-[600px]:pt-10">
                             <h5 className="font-semibold text-2xl pl-2.5">Sound FX</h5>
                             <span >Temos um acervo de mais de 1000 soundFX, com uma qualidade de som incrível e com um preço acessível para todos os tipos de produtores, seja você um produtor iniciante ou um produtor profissional, temos o soundFX ideal para você.</span>
-                            <ButtonDown to={'/sound'} buttonPosition='justify-end' >SoundFX</ButtonDown>
+                            <ButtonDown buttonPosition="justify-end" onClick={() => navigate('/sound')}>SoundFX</ButtonDown>
                         </div>
 
                     </div>

@@ -6,11 +6,11 @@ function useHoookDeleteSound() {
       alert("ID do item não definido.");
       return;
     }
-
     try {
-      await api.delete(`/items/${id}`);
-      alert("Item excluído com sucesso!");
-      location.reload();
+      if (window.confirm("Tem certeza que deseja excluir o item?")) {
+        await api.delete(`/items/${id}`);
+        location.reload();
+      }
     } catch (error) {
       alert("Erro ao excluir o item.");
       console.error(error);

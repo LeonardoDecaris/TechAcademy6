@@ -143,6 +143,21 @@ function AlertDialogCancel({
   )
 }
 
+function AlertDialogCancelPonto({
+  className,
+  ...props
+}: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
+
+  const styleButton = "text-red-600 hover:text-black bg-white/20 hover:bg-red-600 w-6 h-6 rounded-[5px] transtion duration-200";
+
+  return (
+    <AlertDialogPrimitive.Cancel
+      className={`${styleButton} ${className}`}
+      {...props}
+    />
+  )
+}
+
 export {
   AlertDialog,
   AlertDialogPortal,
@@ -155,4 +170,5 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogCancelPonto
 }

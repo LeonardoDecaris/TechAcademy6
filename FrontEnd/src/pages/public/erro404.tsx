@@ -7,7 +7,7 @@ function Erro404() {
 
     return (
         <main className="min-h-[51vh] flex flex-col gap-3 justify-center items-center">
-            <h1 className="font-bold text-7xl">Erro 404</h1>
+            <h2 className="font-bold text-7xl">Erro 404</h2>
             <Link to={'/'} className={styleButton}>Voltar para Home</Link>
         </main>
     );
