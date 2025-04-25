@@ -46,16 +46,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const logout = () => {
-        if (confirm("Do you want to proceed?")) {
-            localStorage.removeItem("authToken");
-            localStorage.removeItem("userId");
-            localStorage.removeItem("userName");
-            localStorage.removeItem("userAdmin");
-            setToken(null);
-            setUserId(null);
-            setUserName(null);
-            location.reload();
-        }
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("userAdmin");
+        setToken(null);
+        setUserId(null);
+        setUserName(null);
+        location.reload();
     };
 
     return (

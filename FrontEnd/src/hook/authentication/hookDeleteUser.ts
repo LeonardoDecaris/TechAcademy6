@@ -13,14 +13,6 @@ function useHookDelete() {
         alert("Usuário não encontrado.");
         return;
       }
-
-      const confirmation = confirm(
-        "Tem certeza de que deseja excluir seu cadastro? Esta ação não pode ser desfeita."
-      );
-      if (!confirmation) {
-        return logout();
-      }
-
       await api.delete(`/users/${userId}`);
       alert("Usuario excluído com sucesso");
       logout();

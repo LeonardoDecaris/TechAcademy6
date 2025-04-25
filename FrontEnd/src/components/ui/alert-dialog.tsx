@@ -132,12 +132,12 @@ function AlertDialogCancel({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
-
-  const styleButton = "bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105";
+  const styleLinkOut = 'border 1 border-white || px-3 py-1.5 rounded-full || font-bold text-white text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
+  const MotionOut = 'bg-black/40 hover:bg-white hover:text-black drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]  hover:scale-103 transition duration-200 transform || font-bold';
 
   return (
     <AlertDialogPrimitive.Cancel
-      className={`${styleButton} ${className}`}
+      className={`${styleLinkOut} ${MotionOut} ${className}`}
       {...props}
     />
   )

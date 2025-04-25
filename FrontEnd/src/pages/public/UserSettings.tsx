@@ -1,17 +1,14 @@
 import { ButtonClose, ButtonDown } from "@/components/custom/global/GlobalButton";
 import FormUpdateUser from "@/components/custom/authentication/FormUpdateUser";
-import useHookDelete from "@/hook/authentication/hookDeleteUser";
 import useHookGetUser from "@/hook/authentication/hookGetUser";
 import Loading from "@/components/custom/global/Loading";
 import Logouser from "@/assets/image/lucas.jpg";
-import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import AlertLogout from "@/components/custom/error/Alertlogout";
+import AlertDelete from "@/components/custom/error/AlertDetele";
 
 function UserSettings() {
     const { userAtributes, loading } = useHookGetUser();
-    const { handleDelete } = useHookDelete();
-    const { logout } = useAuth();
-
     const styleContainerLogo = "bg-black/10 border-1 border-white/50 backdrop-blur-sm rounded-[12px] min-[500px]:flex gap-2 p-1.5";
     const motion = "animate-fade-up animate-duration-500 animate-ease-out animate-normal";
     const styleLogo = "w-18 rounded-[6px] mx-auto min-[500px]:mx-0";
@@ -41,11 +38,15 @@ function UserSettings() {
                 </div>
 
                 <section className="flex justify-center flex-col min-[500px]:flex-row py-2.5">
-                    <ButtonClose children={'Log out'} buttonPosition="justify-end min-[500px]:justify-center" onClick={() => { navigate('/home'); logout(); }} />
-                    <ButtonClose children={'Delete account'} buttonPosition="justify-end min-[500px]:justify-center" onClick={() => { navigate('/home'); handleDelete(); logout(); }} />
+                    <AlertLogout>
+                        <ButtonClose children={'Log out'} buttonPosition="justify-end min-[500px]:justify-center" />
+                    </AlertLogout>
+
+                    <AlertDelete>
+                        <ButtonClose children={'Delete account'} buttonPosition="justify-end min-[500px]:justify-center" />
+                    </AlertDelete>
                     <ButtonDown children={'New password'} buttonPosition="justify-end min-[500px]:justify-center" onClick={() => { navigate('/newPassword'); }} />
                 </section>
-
             </section>
         </main>
     );

@@ -1,17 +1,14 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logoUser from "@/assets/image/lucas.jpg";
 import { useEffect, useState } from "react";
-import { useAuth } from "@/context/AuthContext";
 import DropdownMenuWrapper from "@/components/ui/DropdownMenuWrapper";
+import AlertLogout from "../error/Alertlogout";
 
 const ButtonUserActive = () => {
     const [userName, setUserName] = useState<string | null>(null);
     const [isAdmin, setIsAdmin] = useState<boolean>(false);
-    const Navigate = useNavigate();
-    const { logout } = useAuth();
-
 
     useEffect(() => {
         const fullName = localStorage.getItem("userName");
@@ -44,7 +41,11 @@ const ButtonUserActive = () => {
 
                 <DropdownMenuContent>
                     <Link to={'/userSettings'} className={`${styleLink} ${MotionZoom}`}>User Settings</Link>
-                    <button className={`${styleLinkOut} ${MotionOut}`} onClick={() => { Navigate("/home"); logout(); }}>Log out</button>
+                    <AlertLogout>
+                        <button className={`${styleLinkOut} ${MotionOut}`}>
+                            Log out
+                        </button>
+                    </AlertLogout>
                     {isAdmin &&
                         <Link to={'/admin'} className={`${styleLink} ${MotionZoom}`}>Admin</Link>
                     }
