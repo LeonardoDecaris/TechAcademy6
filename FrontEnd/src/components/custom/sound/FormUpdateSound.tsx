@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Controller } from "react-hook-form";
-import Input from "../global/Input";
-import ComponentSelect from "../global/Select";
-import GlobalButton from "../global/GlobalButton";
+import Input from "@/components/custom/global/Input";
+import ComponentSelect from "@/components/custom/global/Select";
+import GlobalButton from "@/components/custom/global/GlobalButton";
 import useHookGetAllCategory from "@/hook/Categoary/hookGetAllCategory";
 import useHookGetAllAuthor from "@/hook/author/hookGetAllAuthor";
 import useHookUpdateSound from "@/hook/sound/hookUpdateSound";

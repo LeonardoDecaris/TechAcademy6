@@ -1,18 +1,14 @@
 import useHookRegister from "@/hook/authentication/hookRegister";
-import InputPassword from "../global/InputPassword";
-import GlobalButton from "../global/GlobalButton";
-import AlertError from "../error/AlertError";
-import Input from "../global/Input";
+import InputPassword from "@/components/custom/global/InputPassword";
+import GlobalButton from "@/components/custom/global/GlobalButton";
+import AlertError from "@/components/custom/error/AlertError";
+import Input from "@/components/custom/global/Input";
 
 import { useEffect } from "react";
 import Aos from "aos";
 
 
-type FormProps = {
-    className?: string;
-};
-
-const FormRegister = ({ className }: FormProps) => {
+const FormRegister = () => {
 
     const { register, errors, handleSubmit, handleRegister, errorMessage, setErrorMessage } = useHookRegister();
     const errorStyle = "text-red-500 text-sm pl-5";
@@ -22,10 +18,10 @@ const FormRegister = ({ className }: FormProps) => {
     }, [])
 
     return (
-        <div>
+        <>
             {errorMessage && <AlertError message={errorMessage} onClose={() => setErrorMessage(null)} />}
 
-            <form className={`${className} flex-col gap-4 w-full `} onSubmit={handleSubmit(handleRegister)}>
+            <form className={`flex flex-col gap-4 w-full `} onSubmit={handleSubmit(handleRegister)}>
                 <section className="flex flex-col gap-1">
                     <Input type="text" id="name" placeholder="Name" {...register.name} />
                     {errors.name && <span className={errorStyle} data-aos="fade">{errors.name.message}</span>}
@@ -53,7 +49,7 @@ const FormRegister = ({ className }: FormProps) => {
 
                 <GlobalButton children={"Register"} buttonPosition="justify-end" />
             </form>
-        </div>
+        </>
     );
 }
 

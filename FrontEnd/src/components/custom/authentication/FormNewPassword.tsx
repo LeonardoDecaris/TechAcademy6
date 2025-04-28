@@ -1,14 +1,14 @@
 import { useHookNewPassword } from "@/hook/authentication/hookNewPassword";
-import InputPassword from "../global/InputPassword";
-import GlobalButton from "../global/GlobalButton";
-import AlertError from "../error/AlertError";
+import InputPassword from "@/components/custom/global/InputPassword";
+import GlobalButton from "@/components/custom/global/GlobalButton";
+import AlertError from "@/components/custom/error/AlertError";
 
 const FormNewPassword = () => {
     const { register, errors, handleSubmit, handleNewPassword, errorMessage, setErrorMessage } = useHookNewPassword();
     const errorStyle = "text-red-500 text-sm pl-5";
 
     return (
-        <div>
+        <>
             {errorMessage && <AlertError message={errorMessage} onClose={() => setErrorMessage(null)} />}
 
             <form className={`flex flex-col gap-4 w-full `} onSubmit={handleSubmit(handleNewPassword)}>
@@ -25,7 +25,7 @@ const FormNewPassword = () => {
 
                 <GlobalButton children={"New Pass"} buttonPosition="justify-end" />
             </form>
-        </div>
+        </>
     );
 }
 

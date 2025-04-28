@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logoUser from "@/assets/image/lucas.jpg";
 import { useEffect, useState } from "react";
 import DropdownMenuWrapper from "@/components/ui/DropdownMenuWrapper";
-import AlertLogout from "../error/Alertlogout";
+import AlertLogout from "@/components/custom/error/Alertlogout";
 
 const ButtonUserActive = () => {
     const [userName, setUserName] = useState<string | null>(null);

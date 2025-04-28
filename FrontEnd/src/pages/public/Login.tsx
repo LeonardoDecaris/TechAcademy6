@@ -19,7 +19,7 @@ function Login() {
     const MotionForm = "animate-fade-left animate-duration-500 animate-ease-out animate-normal"
 
     return (
-        <main className="min-h-[86vh] w-full flex justify-center items-center pt-10">
+        <main className="min-h-[86vh] w-full flex justify-center items-center pt-10 px-2.5">
             <section className={`w-full max-w-[500px] min-[880px]:max-w-[860px]  mb-10 p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-lg rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
 
                 <img src={ImageLogin} alt="imagem Login" className={`rounded-2xl hidden min-[880px]:flex || ${MotionImage} animate-delay-100 `} />
@@ -33,7 +33,7 @@ function Login() {
                         <button onClick={() => setIsLoginActive(false)} className={`${!isLoginActive ? styleButtonActive : styleButtonNull} cursor-pointer`}>Register</button>
                     </div>
 
-                    {isLoginActive ? (<FormLogin className="flex" />) : (<FormRegister className="flex" />)}
+                    {isLoginActive ? (<FormLogin />) : (<FormRegister />)}
 
                 </div>
             </section>

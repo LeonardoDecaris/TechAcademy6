@@ -1,6 +1,6 @@
 import useHookUpdateUser from "@/hook/authentication/hookUpdateUser";
-import GlobalButton from "../global/GlobalButton";
-import Input from "../global/Input";
+import GlobalButton from "@/components/custom/global/GlobalButton";
+import Input from "@/components/custom/global/Input";
 
 import { useEffect } from "react";
 import Aos from "aos";
