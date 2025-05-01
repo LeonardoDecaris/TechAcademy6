@@ -32,7 +32,7 @@ export const ButtonClose = ({ children, icons, buttonPosition, disabled, classNa
 
     const MotionOut = 'bg-black/40 hover:bg-red-600 hover:text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_red] hover:scale-103 transition duration-200 transform || font-bold';
     const styleLinkOut = 'border 1 border-red-600 || px-5 py-2 rounded-full || font-semibold text-red-600 text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
-    const styleDiv: string = "flex items-center pt-5 px-2.5";
+    const styleDiv = "flex items-center pt-5 px-2.5";
 
     return (
         <div className={`${styleDiv} ${buttonPosition}`}>
@@ -48,7 +48,7 @@ export const ButtonDown = ({ children, icons, buttonPosition, disabled, classNam
 
     const styleLink = "bg-black/40 hover:bg-white border 1 border-white || px-5 py-2 rounded-full || font-bold text-white hover:text-black text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]";
     const MotionZoom = 'drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] hover:scale-103 transition duration-200 transform';
-    const styleDiv: string = "flex items-center pt-5 px-2.5";
+    const styleDiv = "flex items-center pt-5 px-2.5";
 
     return (
         <div className={`${styleDiv} ${buttonPosition}`}>

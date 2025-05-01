@@ -4,18 +4,10 @@ import AlertError from "@/components/custom/error/AlertError";
 import useHookLogin from "@/hook/authentication/hookLogin";
 import Input from "@/components/custom/global/Input";
 
-import { useEffect } from "react";
-import Aos from "aos";
-
-
 function FormLogin() {
 
     const { register, handleSubmit, errors, handleLogin, desabledLogin, errorMessage, setErrorMessage } = useHookLogin();
     const errorStyle = "text-red-500 text-sm pl-5";
-
-    useEffect(() => {
-        Aos.init({ duration: 500, delay: 0 });
-    }, [])
 
     return (
         <>

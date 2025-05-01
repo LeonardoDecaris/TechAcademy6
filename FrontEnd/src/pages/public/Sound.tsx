@@ -6,7 +6,6 @@ import Search from "@/components/custom/global/Search";
 import buscar from "@/assets/icons/search.svg";
 
 import { useState, useEffect } from "react";
-import AOS from "aos";
 
 const Sound = () => {
 
@@ -24,7 +23,6 @@ const Sound = () => {
 
 
     useEffect(() => {
-        AOS.init({ duration: 500, delay: 0 });
         getAllItems();
     }, [getAllItems]);
 
