@@ -14,11 +14,18 @@ const ButtonUserActive = () => {
         const fullName = localStorage.getItem("userName");
         if (fullName) {
             const nameParts = fullName.split(" ");
-            const firstName = nameParts[0];
-            const lastNameInitial = nameParts.length > 1 ? nameParts[nameParts.length - 1][0].toUpperCase() : "";
-            setUserName(`${firstName}.${lastNameInitial}`);
+            let formattedName = nameParts[0];
+    
+            if (nameParts.length > 1) {
+                const lastNameInitial = nameParts[nameParts.length - 1][0].toUpperCase();
+                if (nameParts.length <= 3) {
+                    formattedName += `.${lastNameInitial}`;
+                }
+            }
+    
+            setUserName(formattedName);
         }
-
+    
         const userAdmin = localStorage.getItem("userAdmin") === "true";
         setIsAdmin(userAdmin);
     }, []);

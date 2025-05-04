@@ -29,7 +29,7 @@ const AlertLogout = ({ children }: AlertLogoutProps) => {
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogTitle>
-                    Confirm Logout
+                    Confirm to log out
                 </AlertDialogTitle>
                 <AlertDialogHeader>
 

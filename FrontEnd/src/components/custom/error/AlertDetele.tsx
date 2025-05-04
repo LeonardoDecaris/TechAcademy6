@@ -29,9 +29,9 @@ const AlertDelete = ({ children }: AlertLogoutProps) => {
                 {children}
             </AlertDialogTrigger>
             <AlertDialogContent>
-                <AlertDialogTitle>
-                    Confirm Logout
-                </AlertDialogTitle>
+                    <AlertDialogTitle>        
+                        Are you sure you want to delete your username?
+                    </AlertDialogTitle>
                 <AlertDialogHeader>
 
                 </AlertDialogHeader>
