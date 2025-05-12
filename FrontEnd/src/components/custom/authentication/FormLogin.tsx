@@ -21,7 +21,7 @@ function FormLogin() {
                 </section>
 
                 <section className="flex flex-col gap-1">
-                    <InputPassword placeholder="Password" {...register.password} />
+                    <InputPassword id="password" placeholder="Password" {...register.password} />
                     {errors.password && <span className={errorStyle} data-aos="fade">{errors.password.message}</span>}
                 </section>
 
