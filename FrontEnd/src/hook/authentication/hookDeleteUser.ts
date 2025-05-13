@@ -1,12 +1,12 @@
 import { useAuth } from "@/context/AuthContext";
 import api from "@/service/apiService";
-import axios from "axios";
 
 function useHookDelete() {
   const { logout } = useAuth();
 
   const handleDelete = async () => {
     try {
+
       const userId = localStorage.getItem("userId");
 
       if (!userId) {
@@ -17,13 +17,8 @@ function useHookDelete() {
       alert("Usuario excluído com sucesso");
       logout();
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        const errorMessage =
-          error?.response?.data.error
-            .map((e: { message: string }) => e.message)
-            .join(", ") || "Erro ao excluir cadastro";
-        alert(errorMessage);
-      }
+      alert('erro ao deletar o user');
+      console.log(error)
     }
   };
 
