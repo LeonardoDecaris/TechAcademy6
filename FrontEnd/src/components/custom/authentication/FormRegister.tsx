@@ -38,13 +38,13 @@ const FormRegister = () => {
                 </section>
 
                 <section className="flex flex-col gap-1">
-                    <InputPassword placeholder="Password" {...register.password} />
+                    <InputPassword id="password" placeholder="Password" {...register.password} />
                     {errors.password && <span className={errorStyle} data-aos="fade">{errors.password.message}</span>}
                 </section>
 
                 <section className="flex flex-col gap-1">
-                    <InputPassword placeholder="Confirm Password" {...register.confirmPassword} />
-                    {errors.confirmPassword && <span className={errorStyle} data-aos="fade">{errors.confirmPassword.message}</span>}
+                    <InputPassword id="confirmPassword" placeholder="Confirm Password" {...register.confirmPassword} />
+                    {errors.confirmPassword && <span id="teste" className={errorStyle} data-aos="fade">{errors.confirmPassword.message}</span>}
                 </section>
 
                 <GlobalButton children={"Register"} buttonPosition="justify-end" />

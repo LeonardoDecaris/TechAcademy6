@@ -28,9 +28,9 @@ function Login() {
                     <h2 className="text-4xl font-bold text-center pb-8" style={{ letterSpacing: "10px" }} >{isLoginActive ? "LOGIN" : "REGISTER"}</h2>
 
                     <div className="flex justify-center gap-5 pb-8">
-                        <button onClick={() => setIsLoginActive(true)} className={`${isLoginActive ? styleButtonActive : styleButtonNull} cursor-pointer`}>Log in</button>
+                        <button id="login" onClick={() => setIsLoginActive(true)} className={`${isLoginActive ? styleButtonActive : styleButtonNull} cursor-pointer`}>Log in</button>
 
-                        <button onClick={() => setIsLoginActive(false)} className={`${!isLoginActive ? styleButtonActive : styleButtonNull} cursor-pointer`}>Register</button>
+                        <button id="register" onClick={() => setIsLoginActive(false)} className={`${!isLoginActive ? styleButtonActive : styleButtonNull} cursor-pointer`}>Sign Up</button>
                     </div>
 
                     {isLoginActive ? (<FormLogin />) : (<FormRegister />)}
