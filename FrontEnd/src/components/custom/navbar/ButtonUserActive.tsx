@@ -40,7 +40,7 @@ const ButtonUserActive = () => {
         <DropdownMenuWrapper>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <button className="flex items-center gap-1.5 || px-2.5 py-2 || bg backdrop-blur-xl rounded-full bg-white/5 focus:outline-none || border-white/40 border-1 || font-semibold text-[14px] || shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+                    <button id="dropDownButton" className="flex items-center gap-1.5 || px-2.5 py-2 || bg backdrop-blur-xl rounded-full bg-white/5 focus:outline-none || border-white/40 border-1 || font-semibold text-[14px] || shadow-[0_0_10px_rgba(255,255,255,0.1)]">
                         <img src={logoUser} alt="User Avatar" className="w-7 rounded-full" />
                         {userName ? userName : "Logged in"}
                     </button>

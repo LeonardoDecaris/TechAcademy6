@@ -5,7 +5,8 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogCancel,
-    AlertDialogTrigger
+    AlertDialogTrigger,
+    AlertDialogDescription
 } from "@/components/ui/alert-dialog";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -31,12 +32,15 @@ const AlertLogout = ({ children }: AlertLogoutProps) => {
                 <AlertDialogTitle>
                     Confirm to log out
                 </AlertDialogTitle>
+                <AlertDialogDescription>
+                    Are you sure you want to log out? This action cannot be undone.
+                </AlertDialogDescription>
                 <AlertDialogHeader>
 
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <button className={`${styleLinkOut} ${MotionOut}`} onClick={() => { Navigate("/home"); logout(); }}>Confirm</button>
+                    <button id="confirmLogout" className={`${styleLinkOut} ${MotionOut}`} onClick={() => { Navigate("/home"); logout(); }}>Confirm</button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
