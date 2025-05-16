@@ -26,10 +26,10 @@
 - Testar abrir pagina de perfil do ddropdown
 - Testar abrir pagina de perfil e editar nome
 - Testar abrir pagina de perfil e editar senha e redirecionar para pagina de home
-- Testar logout e redirecionar para pagina de home
+- Testar logout e redirecionar para pagina de home ✅
 - Testar deletar usuario e redirecionar para pagina de home
 
-- Testar logout do dropdown e redirecionar para pagina de home
+- Testar logout do dropdown e redirecionar para pagina de home ✅
 - Testar abrir o admin do drowdown
 - Testar abrir pagina de admin e editar usuario
 - Testar abrir pagina de admin sem ser admin
