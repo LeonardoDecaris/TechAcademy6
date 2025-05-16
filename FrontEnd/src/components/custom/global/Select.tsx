@@ -25,7 +25,7 @@ const ComponentSelect = ({ placeholder, options, selectedValue, onChange }: Sele
         "w-full bg-white/20 backdrop-blur-xl rounded-full border border-white text-white py-5 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
     return (
         <Select
-            value={selectedValue ? String(selectedValue) : undefined}
+            value={selectedValue ? String(selectedValue) : "0"}
             onValueChange={onChange}
         >
             <SelectTrigger className={styleInput}>
@@ -34,6 +34,9 @@ const ComponentSelect = ({ placeholder, options, selectedValue, onChange }: Sele
             <SelectContent>
                 <SelectGroup>
                     <SelectLabel>{placeholder}</SelectLabel>
+                    <SelectItem key={0} value="0">
+                        Nenhum
+                    </SelectItem>
                     {options?.map((option) => (
                         <SelectItem key={option.id} value={String(option.id)}>
                             {option.name}

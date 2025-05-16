@@ -5,11 +5,9 @@ import useHookPostCategory from "@/hook/Categoary/hookPostCategory";
 import { useEffect, useState } from "react";
 import api from "@/service/apiService";
 import AOS from "aos";
+import useHookDeleteCategory from "@/hook/Categoary/hookDeleteCategory";
+import useHookGetAllCategory from "@/hook/Categoary/hookGetAllCategory";
 
-interface Item {
-    id: number;
-    name: string;
-}
 
 function AdminCategory() {
     const { handlecategory, setCreateName } = useHookPostCategory();
@@ -18,11 +16,9 @@ function AdminCategory() {
     const styleForm = "flex flex-col gap-2.5 w-full";
     const styleHr = "h-[3px] rounded-full";
 
-    const [loading, setLoading] = useState(false);
-    const [items, setItems] = useState<Item[]>([]);
+    const { handleDelete } = useHookDeleteCategory();
 
     const [updateId, setUpdateId] = useState<number | string>("");
-    const [deleteId, setDeleteId] = useState<number | string>("");
     const [updateName, setUpdateName] = useState("");
 
     useEffect(() => {
@@ -30,25 +26,7 @@ function AdminCategory() {
         getCategories();
     }, []);
 
-    if (loading) {
-        return <div className="text-center text-lg font-bold py-10">Carregando...</div>;
-    }
-
-    // ===========================================================================================
-
-    const getCategories = async () => {
-        setLoading(true);
-        try {
-            const { data } = await api.get("/categories");
-            setItems(data);
-        } catch (error) {
-            alert("Error loading categories.");
-            console.error(error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
+    const { category, getCategories } = useHookGetAllCategory();
 
     const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -66,22 +44,6 @@ function AdminCategory() {
         }
     };
 
-    // ===========================================================================================
-
-    const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            await api.delete(`/categories/${deleteId}`);
-
-            alert("Categoria deletada com sucesso!");
-            location.reload();
-        } catch (error) {
-            alert("Error deleting category.");
-            console.error(error);
-        }
-    };
-
-    // ===========================================================================================
 
     return (
         <main className="py-14 px-2.5 mx-auto max-w-[1220px]">
@@ -120,27 +82,13 @@ function AdminCategory() {
                         <GlobalButton children={"Login"} buttonPosition="justify-center" />
                     </form>
                 </div>
-
-                <div className="w-full" data-aos="fade-up">
-                    <label>Delete Category</label>
-                    <form onSubmit={handleDelete} className={styleForm}>
-                        <input
-                            type="number"
-                            placeholder="ID Category"
-                            className={styleInput}
-                            value={deleteId}
-                            onChange={(e) => setDeleteId(e.target.value)}
-                        />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
-                    </form>
-                </div>
             </section>
 
             <div className="py-7"><hr className={styleHr} data-aos="fade-up" /></div>
 
             <section className="flex flex-wrap gap-3 justify-center items-center">
-                {items.map(item => (
-                    <BlocoAuthorCatg key={item.id} Id={item.id} Name={item.name} />
+                {category.map(category => (
+                    <BlocoAuthorCatg key={category.id} onClick={() => handleDelete(category.id)} Name={category.name} />
                 ))}
             </section>
         </main>

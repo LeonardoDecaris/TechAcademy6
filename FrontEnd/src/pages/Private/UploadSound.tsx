@@ -29,7 +29,7 @@ function UploadSound() {
             <h2 className="text-4xl pb-4 font-medium">Upload Sound</h2>
 
             <section>
-                <Input id="name" type="text" placeholder="Nome" {...register.name} />
+                <Input id="name" type="text" placeholder="Name to sound" {...register.name} />
                 {errors.name && (
                     <span className={errorStyle}>{errors.name.message}</span>
                 )}
@@ -37,20 +37,20 @@ function UploadSound() {
 
             <section>
                 <Controller control={control} name="author" rules={{ required: "Author is required" }} render={({ field: { onChange, value } }) => (
-                    <ComponentSelect placeholder="Selecione o author" options={items} selectedValue={value} onChange={(val) => onChange(Number(val))} />
+                    <ComponentSelect placeholder="Select the author" options={items} selectedValue={value} onChange={(val) => onChange(Number(val))} />
                 )} />
                 {errors.author && (<span className={errorStyle}>{errors.author.message}</span>)}
             </section>
 
             <section>
                 <Controller control={control} name="category" rules={{ required: "Category is required" }} render={({ field: { onChange, value } }) => (
-                    <ComponentSelect placeholder="Selecione o category" options={category} selectedValue={value} onChange={(val) => onChange(Number(val))} />
+                    <ComponentSelect placeholder="Select the category" options={category} selectedValue={value} onChange={(val) => onChange(Number(val))} />
                 )} />
                 {errors.category && (<span className={errorStyle}>{errors.category.message}</span>)}
             </section>
 
             <section>
-                <Input id="directory" type="file" placeholder="Arquivo"  {...register.directory} />
+                <Input id="directory" type="file" placeholder="Directory"  {...register.directory} />
                 {errors.directory && (<span className={errorStyle}>{errors.directory.message}</span>)}
             </section>
 

@@ -24,9 +24,11 @@ function useHookUpdateUser() {
       });
       logout();
       nevagate("/home");
-      location.reload();
+      location.reload()
+      alert("Update completed successfully!");
     } catch (error) {
       console.log(error);
+      alert("Error updating user.");
     }
   };
 

@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, Outlet, useLocation } from "react-router-
 import PrivateRoute from "@/routes/PrivateRoute";
 
 // imports end images
-import BgGitHub from "@/assets/image/GitHub.webp";
-import background from "@/assets/image/Home.webp";
-import BgLogin from "@/assets/image/HomeGit.webp";
+import BgGitHub from "@/assets/image/GitHub.png";
+import background from "@/assets/image/Home.png";
+import BgLogin from "@/assets/image/HomeGit.png";
 
 // imports end pages
 import Header from "@/components/custom/navbar/Header";
@@ -26,6 +26,7 @@ import Contact from "@/pages/public/Contact";
 import Admin from "@/pages/Private/Admin";
 import About from "@/pages/public/About";
 import Sound from "@/pages/public/Sound";
+import Footer from "@/components/custom/global/Footer";
 
 
 function WebRoutes() {
@@ -65,6 +66,7 @@ function WebRoutes() {
                 {/* Rota de erro 404 */}
                 <Route path="*" element={<Erro404 />} />
             </Routes>
+            <FooterWrapper />
         </BrowserRouter>
     );
 }
@@ -73,5 +75,11 @@ function HeaderWrapper() {
     const location = useLocation();
     return location.pathname !== "/teste" ? <Header /> : null;
 }
+
+function FooterWrapper() {
+    const location = useLocation();
+    return location.pathname !== "/home" && location.pathname !== "/" ? null : <Footer />;
+}
+
 
 export default WebRoutes;

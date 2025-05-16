@@ -1,9 +1,12 @@
+import BlocoAuthorCatg from "@/components/custom/admin/BlocoAuthorCatg";
 import GlobalButton from "@/components/custom/global/GlobalButton";
+import useHookGetAllAuthor from "@/hook/author/hookGetAllAuthor";
+
 import { useEffect, useState } from "react";
 import api from "@/service/apiService";
 import axios from "axios";
 import AOS from "aos";
-
+import useHookDeleteAuthor from "@/hook/author/hookDeleteAuthor";
 
 
 function AdminCategory() {
@@ -13,20 +16,13 @@ function AdminCategory() {
     const styleHr = "h-[3px] rounded-full";
 
     const [updateId, setUpdateId] = useState<number | string>("");
-    const [deleteId, setDeleteId] = useState<number | string>("");
     const [createName, setCreateName] = useState("");
     const [updateName, setUpdateName] = useState("");
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
+        getAuthor();
     }, []);
-
-
-    // ============================================================================================== //
-
-
-
-    // ============================================================================================== //
 
     const handleSound = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -39,9 +35,6 @@ function AdminCategory() {
             alert("Erro ao realizar o registro.");
         }
     };
-
-    // ============================================================================================== //
-
 
     const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -63,22 +56,8 @@ function AdminCategory() {
         }
     };
 
-    // ============================================================================================== //
-
-    const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            await api.delete(`/authors/${deleteId}`);
-
-            alert("Category deleted successfully!");
-            location.reload();
-        } catch (error) {
-            alert("Unknown error!");
-            console.log(error);
-        }
-    };
-
-    // ============================================================================================== //
+    const { items, getAuthor } = useHookGetAllAuthor();
+    const { handleDelete } = useHookDeleteAuthor();
 
     return (
         <main className="py-14 px-2.5 mx-auto max-w-[1220px] min-h-[51vh]">
@@ -119,27 +98,14 @@ function AdminCategory() {
                     </form>
                 </div>
 
-                <div className="w-full">
-                    <label>Delet Author</label>
-                    <form onSubmit={handleDelete} className={styleForm}>
-                        <input
-                            type="number"
-                            placeholder="ID authors"
-                            className={styleInput}
-                            value={deleteId}
-                            onChange={(e) => setDeleteId(e.target.value)}
-                        />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
-                    </form>
-                </div>
-
             </section>
 
             <div className="py-7"><hr className={styleHr} /></div>
 
             <section className="flex flex-wrap justify-center items-center gap-3">
-
-                {/* <BlocoAuthorCatg key={item.id} Id={item.id} Name={item.name} /> */}
+                {items.map(item => (
+                    <BlocoAuthorCatg key={item.id} onClick={() => handleDelete(item.id)} Name={item.name} />
+                ))}
             </section>
 
         </main>
