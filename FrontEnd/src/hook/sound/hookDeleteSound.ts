@@ -7,10 +7,10 @@ function useHoookDeleteSound() {
       return;
     }
     try {
-      if (window.confirm("Tem certeza que deseja excluir o item?")) {
         await api.delete(`/items/${id}`);
         location.reload();
-      }
+      // if (window.confirm("Tem certeza que deseja excluir o item?")) {
+      // }
     } catch (error) {
       alert("Erro ao excluir o item.");
       console.error(error);

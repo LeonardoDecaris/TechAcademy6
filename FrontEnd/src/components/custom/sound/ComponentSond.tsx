@@ -1,5 +1,4 @@
 import { useAudioController } from "@/controller/audioController";
-import useHoookDeleteSound from "@/hook/sound/hookDeleteSound";
 import imagemSound from "@/assets/image/logoSoudn.png";
 import download from "@/assets/icons/download.svg";
 import excle from "@/assets/icons/exclusesvg.svg";
@@ -11,6 +10,7 @@ import AOS from "aos";
 
 import AlertErrorDownload from "../error/AlertErrorDownload";
 import AlertUpdateSound from "./AlertUpdateSound";
+import AlertDeleteSound from "../error/AlertDeleteSound";
 
 
 type Props = {
@@ -29,7 +29,7 @@ function ComponentSound({ src, name, author, category, className1, className2, I
     const SyButton2 = "bg-black/20 rounded-full border border-white px-2.5 py-[5px] items-center gap-3";
     const motionButton = "transition-all duration-300 ease-in-out  hover:scale-110";
 
-    const { handleDelete } = useHoookDeleteSound();
+
     const [AccessoDowload, setIsUserLogin] = useState<boolean>(true);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const { audioRef, isPlaying, currentTime, duration, togglePlayPause, handleTimeUpdate, handleLoadedMetadata, handleDownload, formatTime, } = useAudioController();
@@ -111,9 +111,9 @@ function ComponentSound({ src, name, author, category, className1, className2, I
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
                     <AlertUpdateSound valueName={name} valueSoundId={Number(IdSound)} />
-                    <button onClick={() => handleDelete(IdSound!)} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,0,0,0.8)] cursor-pointer`}>
+                    <AlertDeleteSound IdSound={Number(IdSound)} >
                         <img src={excle} />
-                    </button>
+                    </AlertDeleteSound>
                 </div>
             </div>
         </section >

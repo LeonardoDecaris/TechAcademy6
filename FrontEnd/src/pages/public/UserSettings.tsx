@@ -16,7 +16,7 @@ function UserSettings() {
 
     return (
         <main className="min-h-[80vh] max-w-[600px] mx-auto flex justify-center items-center px-2.5 ">
-            <section className={`$w-full bg-white/10 border-1 border-white backdrop-blur-sm rounded-xl p-2.5 ${motion}`}>
+            <section className={`w-full bg-white/10 border-1 border-white backdrop-blur-sm rounded-xl p-2.5 ${motion}`}>
 
                 <div className={styleContainerLogo}>
                     {loading ? (
