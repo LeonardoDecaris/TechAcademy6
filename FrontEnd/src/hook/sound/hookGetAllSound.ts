@@ -29,7 +29,6 @@ const useHookGetAllSound = () => {
       const { data } = await api.get("/items");
       setSounds(data);
     } catch (error) {
-      alert("Error when loading data.");
       console.error(error);
     } finally {
       setLoading(false);
