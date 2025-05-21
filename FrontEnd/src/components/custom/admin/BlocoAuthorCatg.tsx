@@ -4,6 +4,7 @@ import { ButtonClose } from "../global/GlobalButton";
 type Props = {
     Name: string;
     idAuthor?: number;
+    onClick?: () => void;
 }
 
 const BlocoAuthorCatg = ({ Name, idAuthor }: Props) => {

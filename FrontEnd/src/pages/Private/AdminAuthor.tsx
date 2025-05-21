@@ -71,7 +71,7 @@ function AdminCategory() {
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
+                        <GlobalButton children={"Create"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
@@ -92,7 +92,7 @@ function AdminCategory() {
                             value={updateName}
                             onChange={(e) => setUpdateName(e.target.value)}
                         />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
+                        <GlobalButton children={"Update"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
