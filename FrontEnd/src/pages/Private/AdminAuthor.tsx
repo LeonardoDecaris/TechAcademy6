@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import api from "@/service/apiService";
 import axios from "axios";
 import AOS from "aos";
-import useHookDeleteAuthor from "@/hook/author/hookDeleteAuthor";
 
 
 function AdminCategory() {
@@ -57,7 +56,6 @@ function AdminCategory() {
     };
 
     const { items, getAuthor } = useHookGetAllAuthor();
-    const { handleDelete } = useHookDeleteAuthor();
 
     return (
         <main className="py-14 px-2.5 mx-auto max-w-[1220px] min-h-[51vh]">
@@ -73,7 +71,7 @@ function AdminCategory() {
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
+                        <GlobalButton children={"Create"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
@@ -94,7 +92,7 @@ function AdminCategory() {
                             value={updateName}
                             onChange={(e) => setUpdateName(e.target.value)}
                         />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
+                        <GlobalButton children={"Update"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
@@ -103,8 +101,8 @@ function AdminCategory() {
             <div className="py-7"><hr className={styleHr} /></div>
 
             <section className="flex flex-wrap justify-center items-center gap-3">
-                {items.map(item => (
-                    <BlocoAuthorCatg key={item.id} onClick={() => handleDelete(item.id)} Name={item.name} />
+                {items.map(author => (
+                    <BlocoAuthorCatg Name={author.name} idAuthor={author.id} />
                 ))}
             </section>
 

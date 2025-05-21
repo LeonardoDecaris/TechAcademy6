@@ -111,8 +111,8 @@ function ComponentSound({ src, name, author, category, className1, className2, I
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
                     <AlertUpdateSound valueName={name} valueSoundId={Number(IdSound)} />
-                    <AlertDeleteSound IdSound={Number(IdSound)} >
-                        <img src={excle} />
+                    <AlertDeleteSound IdSound={Number(IdSound)}>
+                        <img src={excle} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,0,0,0.8)]`} />
                     </AlertDeleteSound>
                 </div>
             </div>
