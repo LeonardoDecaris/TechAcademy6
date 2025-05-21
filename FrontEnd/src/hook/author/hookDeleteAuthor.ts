@@ -4,7 +4,6 @@ function useHookDeleteAuthor() {
   const handleDelete = async (deleteId: number) => {
     try {
       await api.delete(`/authors/${deleteId}`);
-      alert("Author deleted successfully!");
       location.reload();
     } catch (error) {
     console.log(error);
