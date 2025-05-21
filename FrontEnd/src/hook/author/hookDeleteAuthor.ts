@@ -4,11 +4,10 @@ function useHookDeleteAuthor() {
   const handleDelete = async (deleteId: number) => {
     try {
       await api.delete(`/authors/${deleteId}`);
-      alert("Category deleted successfully!");
       location.reload();
     } catch (error) {
-      alert("Error deleting category. Please try again.");
-      console.log(error);
+    console.log(error);
+    alert("To delete the author you must delete all audios linked to it");
     }
   };
 

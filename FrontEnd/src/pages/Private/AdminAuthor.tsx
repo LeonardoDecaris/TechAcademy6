@@ -1,23 +1,21 @@
-import BlocoAuthorCatg from "@/components/custom/admin/BlocoAuthorCatg";
 import GlobalButton from "@/components/custom/global/GlobalButton";
 import useHookGetAllAuthor from "@/hook/author/hookGetAllAuthor";
+import BlocoAuthor from "@/components/custom/admin/BlocoAuthor";
 
 import { useEffect, useState } from "react";
 import api from "@/service/apiService";
-import axios from "axios";
 import AOS from "aos";
-import useHookDeleteAuthor from "@/hook/author/hookDeleteAuthor";
 
 
 function AdminCategory() {
 
-    const styleInput = "w-full bg-white/20 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
+    const styleInput = "w-full bg-black/60 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
+    const containerCreater = " bg-white/20 backdrop-blur-xl rounded-2xl p-5 shadow-lg shadow-black/20 gap-2.5 || border-1 border-white";
     const styleForm = "flex flex-col gap-2.5 w-full";
-    const styleHr = "h-[3px] rounded-full";
 
-    const [updateId, setUpdateId] = useState<number | string>("");
+    const { items, getAuthor } = useHookGetAllAuthor();
     const [createName, setCreateName] = useState("");
-    const [updateName, setUpdateName] = useState("");
+    
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
@@ -36,35 +34,12 @@ function AdminCategory() {
         }
     };
 
-    const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            await api.put(`/authors/${updateId}`, {
-                id: Number(updateId),
-                name: updateName,
-            });
-
-            alert("Update completed successfully!");
-            location.reload();
-        } catch (error) {
-            if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data?.error
-                    ? error.response.data.error.map((e: { message: string }) => e.message).join(', ')
-                    : "Erro ao atualizar";
-                alert(errorMessage);
-            }
-        }
-    };
-
-    const { items, getAuthor } = useHookGetAllAuthor();
-    const { handleDelete } = useHookDeleteAuthor();
 
     return (
         <main className="py-14 px-2.5 mx-auto max-w-[1220px] min-h-[51vh]">
-            <section className="flex gap-2.5 flex-col min-[700px]:flex-row" data-aos="fade-up">
-
-                <div className="w-full">
-                    <label>Create Author</label>
+            <section className="flex gap-2.5 flex-col min-[700px]:flex-row pb-7" data-aos="fade-up">
+                <div className={`max-w-[400px] w-full m-auto ${containerCreater}`}>
+                    <label className="pl-5 ">Create Author</label>
                     <form onSubmit={handleSound} className={styleForm}>
                         <input
                             type="text"
@@ -73,38 +48,14 @@ function AdminCategory() {
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
+                        <GlobalButton children={"Create"} buttonPosition="justify-end" />
                     </form>
                 </div>
-
-                <div className="w-full">
-                    <label>Update Author</label>
-                    <form onSubmit={handleUpdate} className={styleForm}>
-                        <input
-                            type="number"
-                            placeholder="ID authors"
-                            className={styleInput}
-                            value={updateId}
-                            onChange={(e) => setUpdateId(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            placeholder="Name authors"
-                            className={styleInput}
-                            value={updateName}
-                            onChange={(e) => setUpdateName(e.target.value)}
-                        />
-                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
-                    </form>
-                </div>
-
             </section>
 
-            <div className="py-7"><hr className={styleHr} /></div>
-
             <section className="flex flex-wrap justify-center items-center gap-3">
-                {items.map(item => (
-                    <BlocoAuthorCatg key={item.id} onClick={() => handleDelete(item.id)} Name={item.name} />
+                {items.map(author => (
+                    <BlocoAuthor Name={author.name} idAuthor={author.id} />
                 ))}
             </section>
 

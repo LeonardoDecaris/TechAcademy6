@@ -1,5 +1,6 @@
 import { PaginationComponent } from "@/components/custom/pagination/ConponentesPagination";
 import ComponentSound from "@/components/custom/sound/ComponentSond";
+import GlobalButton from "@/components/custom/global/GlobalButton";
 import useHookGetAllSound from "@/hook/sound/hookGetAllSound";
 import Loading from "@/components/custom/global/Loading";
 import Search from "@/components/custom/global/Search";
@@ -47,6 +48,7 @@ const Sound = () => {
                             <>
                                 <span className="text-center">Nenhum resultado encontrado</span>
                                 <span className="text-center">Por favor recarregue a página</span>
+                                <GlobalButton onClick={() => window.location.reload()} children={"Recarregar"} className="m-auto"  />
                             </>
                         )}
                         {paginatedSounds.map((item, index) => (
