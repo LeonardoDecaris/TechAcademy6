@@ -43,23 +43,23 @@ const Header = () => {
 
                     <ul className="hidden min-[1000px]:flex gap-5">
                         <li>
-                            <Link to={"/home"} className={`${MotionZoom}`}>
+                            <Link to={"/home"} id="home" className={`${MotionZoom}`}>
                                 Home
                             </Link>
                         </li>
 
                         <li>
-                            <Link to={"/sound"} className={`${MotionZoom}`}>
+                            <Link to={"/sound"} id="sound" className={`${MotionZoom}`}>
                                 Sound
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/contact"} className={`${MotionZoom}`}>
+                            <Link to={"/contact"} id="contact" className={`${MotionZoom}`}>
                                 Contact
                             </Link>
                         </li>
                         <li>
-                            <Link to={"/about"} className={`${MotionZoom}`}>
+                            <Link to={"/about"} id="about" className={`${MotionZoom}`}>
                                 Developers
                             </Link>
                         </li>
@@ -71,6 +71,7 @@ const Header = () => {
                     <a
                         href="https://github.com/lucas-pedrozo/TechAcademy5.git"
                         className="hidden min-[500px]:flex items-center gap-1.5 || px-5 py-2 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] hover:scale-102 transition duration-300"
+                        id="github"
                         style={{
                             backgroundColor: "#6900e2",
                             backgroundImage:
