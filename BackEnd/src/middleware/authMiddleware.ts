@@ -33,23 +33,15 @@ export const authMiddleware = (
 
   try {
     const decoded = verifyToken(token);
-    console.log('Decoded token:', decoded);
-
     if (!decoded.user || !decoded.user.admin) {
-      console.log('Admin check failed:', { 
-        decoded: decoded,
-        adminValue: decoded?.user?.admin,
-        typeofAdmin: typeof decoded?.user?.admin
-      });
       return res.status(403).json({
         message: "Acesso negado. Permissão de administrador necessária"
       });
     }
-    
+  
     req.user = decoded.user;
     next();
   } catch (error) {
-    console.error('Token verification error:', error);
     return res.status(401).json({ 
       message: "Token inválido",
       error: error instanceof Error ? error.message : 'Unknown error'
