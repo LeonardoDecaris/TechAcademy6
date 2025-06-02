@@ -34,9 +34,9 @@ function About() {
 
                         <div className=' flex justify-center min-[700px]:justify-start || pt-10'>
 
-                            <a href="https://github.com/lucas-pedrozo/TechAcademy5.git" className="flex items-center gap-1.5 || px-6 py-2.5 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
+                            <a href="https://github.com/lucas-pedrozo" className="flex items-center gap-1.5 || px-6 py-2.5 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
                                 style={{ backgroundColor: '#6900e2', backgroundImage: 'linear-gradient(135deg, #6900e2 0%, #00e2bd 100%)' }}>
-                                <img src={logoGit} alt="github" />
+                                <img src={logoGit} alt="GitHub_Lucas" />
                                 GitHub
                             </a>
                         </div>
@@ -53,9 +53,9 @@ function About() {
 
                         <div className='flex justify-center min-[700px]:justify-start || pt-10'>
 
-                            <a href="https://github.com/lucas-pedrozo/TechAcademy5.git" className="flex items-center gap-1.5 || px-6 py-2.5 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
+                            <a href="https://github.com/LeonardoDecaris" className="flex items-center gap-1.5 || px-6 py-2.5 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
                                 style={{ backgroundColor: '#6900e2', backgroundImage: 'linear-gradient(135deg, #6900e2 0%, #00e2bd 100%)' }}>
-                                <img src={logoGit} alt="github" />
+                                <img src={logoGit} alt="GitHub_Leonardo" />
                                 GitHub
                             </a>
                         </div>

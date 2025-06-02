@@ -85,11 +85,11 @@ function ComponentSound({ src, name, author, category, className1, className2, I
             <div className="flex justify-between items-center gap-2.5 min-w-[72%]">
                 <div className="flex items-center gap-2.5">
                     <button onClick={togglePlayPause} className={SyButton}>
-                        <img src={isPlaying ? pause : play} className={isPlaying ? "" : "pl-[2px]"} />
+                        <img alt={name} src={isPlaying ? pause : play} className={isPlaying ? "" : "pl-[2px]"} />
                     </button>
 
                     <div className="flex gap-1">
-                        <span className={SyTime}>{formatTime(currentTime)}</span>
+                        <span id="currentTime" className={SyTime}>{formatTime(currentTime)}</span>
                         <span className={SyTime}>/</span>
                         <span className={SyTime}>{formatTime(duration)}</span>
                     </div>
@@ -106,7 +106,7 @@ function ComponentSound({ src, name, author, category, className1, className2, I
 
                 <div className={`${SyButton2} ${className1}`}>
                     <button onClick={() => { handleLoginCheck() }} disabled={!AccessoDowload} className={`${motionButton} hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]`}>
-                        <img src={download} />
+                        <img src={download} alt="Download"/>
                     </button>
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
