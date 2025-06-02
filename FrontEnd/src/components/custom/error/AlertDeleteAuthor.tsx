@@ -13,10 +13,11 @@ import useHookDeleteAuthor from "@/hook/author/hookDeleteAuthor";
 
 type AlertLogoutProps = {
     children: React.ReactNode;
-    IdAuthor: number
+    idAuthor?: number
+    authorName?: string;
 };
 
-const AlertDeleteAuthor = ({ children: children, IdAuthor }: AlertLogoutProps) => {
+const AlertDeleteAuthor = ({ children: children, idAuthor }: AlertLogoutProps) => {
 
     const styleLinkOut = 'border 1 border-red-600 || px-3 py-1.5 rounded-full || font-bold text-red-600 text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
     const MotionOut = 'bg-black/40 hover:bg-red-600 hover:text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_red] hover:scale-103 transition duration-200 transform || font-bold';
@@ -40,7 +41,7 @@ const AlertDeleteAuthor = ({ children: children, IdAuthor }: AlertLogoutProps) =
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <button className={`${styleLinkOut} ${MotionOut}`} onClick={() => {handleDelete(IdAuthor!)}}>Confirm</button>
+                    <button id="btnDelete" className={`${styleLinkOut} ${MotionOut}`} onClick={() => {handleDelete(idAuthor!)}}>Confirm</button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>

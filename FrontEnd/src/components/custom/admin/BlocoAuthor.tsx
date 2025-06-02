@@ -5,6 +5,7 @@ import AlertUpdateAthor from "../sound/AlertUpdateAthor";
 type Props = {
     Name: string;
     idAuthor: number;
+    authorName?: string;
 }
 
 const BlocoAuthor = ({ Name, idAuthor }: Props) => {
@@ -14,12 +15,19 @@ const BlocoAuthor = ({ Name, idAuthor }: Props) => {
         <div className={`${styleAuthor} `} data-aos="fade-up">
             <span className="font-medium" >Name: {Name}</span>
                 <div className="flex justify-between items-center">
-                    <AlertDeleteAuthor IdAuthor={idAuthor!} >
-                        <ButtonClose children="Delete"/>
+                    <AlertDeleteAuthor idAuthor={idAuthor} authorName={Name} >
+                        <ButtonClose children="Delete" id={Name}/>
                     </AlertDeleteAuthor>
 
-                    <AlertUpdateAthor idAuthor={idAuthor!}>
-                        <ButtonDown children="Update" />
+                    <AlertUpdateAthor idAuthor={idAuthor} authorName={Name}>
+                        <ButtonDown children="Update" id={Name}/>
+
+                        {/* <ButtonDown  id={Name}>
+                            <span>
+                                Update
+                            </span>
+                        </ButtonDown> */}
+
                     </AlertUpdateAthor>
                 </div>
         </div>

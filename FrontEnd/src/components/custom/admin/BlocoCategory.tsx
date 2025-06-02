@@ -6,6 +6,7 @@ import AlertUpdateCategory from "../sound/AlertUpdateCategory";
 type Props = {
     Name: string;
     idcategory: number;
+    categoryName?: string;
 }
 
 const BlocoCategory = ({ Name, idcategory }: Props) => {
@@ -15,12 +16,12 @@ const BlocoCategory = ({ Name, idcategory }: Props) => {
         <div className={`${styleAuthor} `} data-aos="fade-up">
             <span className="font-medium" >Name: {Name}</span>
                 <div className="flex justify-between items-center">
-                    <AlertDeleteCategory IdAuthor={idcategory!} >
-                        <ButtonClose children="Delete"/>
+                    <AlertDeleteCategory IdAuthor={idcategory!} categoryName={Name}>
+                        <ButtonClose children="Delete" id={Name}/>
                     </AlertDeleteCategory>
 
-                    <AlertUpdateCategory idCategory={idcategory!} >
-                        <ButtonDown children="Update"/>
+                    <AlertUpdateCategory idCategory={idcategory!} categoryName={Name} >
+                        <ButtonDown children="Update" id={Name}/>
                     </AlertUpdateCategory>
                 </div>
         </div>

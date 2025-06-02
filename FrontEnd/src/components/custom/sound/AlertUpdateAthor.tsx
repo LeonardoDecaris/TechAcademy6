@@ -15,9 +15,10 @@ import Input from "../global/Input";
 type AlertUpdateAthorProps = {
     children: React.ReactNode;
     idAuthor: number;
+    authorName: string;
 }
 
-const AlertUpdateAthor = ({ children, idAuthor }: AlertUpdateAthorProps) => {
+const AlertUpdateAthor = ({ children, idAuthor, authorName }: AlertUpdateAthorProps) => {
     const { register, handleSubmit, handleUpdate, errors } = useHookUpdateAuthor();
 
     const styleForm = "flex flex-col gap-2.5";
@@ -40,10 +41,10 @@ const AlertUpdateAthor = ({ children, idAuthor }: AlertUpdateAthorProps) => {
                         <label>Update Author Name</label>
                         <form onSubmit={handleSubmit((data) => handleUpdate(data, idAuthor))} className={styleForm}>
                             <section>
-                                <Input {...register.name} type="text" placeholder="Author Name" />
+                                <Input {...register.name} type="text" placeholder="Author Name" defaultValue={authorName} />
                                  {errors.name && <span className={errorStyle} data-aos="fade">{errors.name.message}</span>}
                                </section>
-                            <ButtonDown children={"Update"} buttonPosition="justify-end" />
+                            <ButtonDown id="btnUpdate" children={"Update"} buttonPosition="justify-end"/>
                         </form>
                     </section> 
                 </AlertDialogDescription>

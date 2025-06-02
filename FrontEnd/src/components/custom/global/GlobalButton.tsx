@@ -5,6 +5,7 @@ type Props = {
     disabled?: boolean;
     className?: string;
     onClick?: () => void;
+    id?: string;
     to?: string
 }
 
@@ -28,7 +29,7 @@ const GlobalButton = ({ children, icons, buttonPosition, disabled, className, on
 export default GlobalButton;
 
 
-export const ButtonClose = ({ children, icons, buttonPosition, disabled, className, onClick }: Props) => {
+export const ButtonClose = ({ children, icons, buttonPosition, disabled, className, onClick, id }: Props) => {
 
     const MotionOut = 'bg-black/40 hover:bg-red-600 hover:text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_red] hover:scale-103 transition duration-200 transform || font-bold';
     const styleLinkOut = 'border 1 border-red-600 || px-5 py-2 rounded-full || font-semibold text-red-600 text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
@@ -36,7 +37,7 @@ export const ButtonClose = ({ children, icons, buttonPosition, disabled, classNa
 
     return (
         <div className={`${styleDiv} ${buttonPosition}`}>
-            <button className={`${styleLinkOut} ${MotionOut} ${className}`} disabled={disabled} onClick={onClick}>
+            <button className={`${styleLinkOut} ${MotionOut} ${className}`} disabled={disabled} onClick={onClick} id={id}>
                 {children}
                 {icons}
             </button>
@@ -44,7 +45,7 @@ export const ButtonClose = ({ children, icons, buttonPosition, disabled, classNa
     );
 }
 
-export const ButtonDown = ({ children, icons, buttonPosition, disabled, className, onClick }: Props) => {
+export const ButtonDown = ({ children, icons, buttonPosition, disabled, className, onClick, id }: Props) => {
 
     const styleLink = "bg-black/40 hover:bg-white border 1 border-white || px-5 py-2 rounded-full || font-bold text-white hover:text-black text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]";
     const MotionZoom = 'drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] hover:scale-103 transition duration-200 transform';
@@ -52,7 +53,7 @@ export const ButtonDown = ({ children, icons, buttonPosition, disabled, classNam
 
     return (
         <div className={`${styleDiv} ${buttonPosition}`}>
-            <button className={`${styleLink} ${MotionZoom} ${className}`} disabled={disabled} onClick={onClick}>
+            <button className={`${styleLink} ${MotionZoom} ${className}`} disabled={disabled} onClick={onClick} id={id}>
                 {children}
                 {icons}
             </button>

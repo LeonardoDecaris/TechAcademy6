@@ -39,7 +39,7 @@ function UserSettings() {
 
                 <section className="flex justify-center flex-col min-[500px]:flex-row py-2.5">
                     <AlertLogout>
-                        <ButtonClose children={'Log out'} buttonPosition="justify-end min-[500px]:justify-center" />
+                        <ButtonClose children={'LogOut'} buttonPosition="justify-end min-[500px]:justify-center" />
                     </AlertLogout>
 
                     <AlertDelete>

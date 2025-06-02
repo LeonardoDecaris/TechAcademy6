@@ -16,9 +16,10 @@ import useHookUpdateCategory from "@/hook/Categoary/hookUpdateCategory";
 type AlertUpdateCategoryProps = {
     children: React.ReactNode;
     idCategory: number;
+    categoryName?: string;
 }
 
-const AlertUpdateCategory = ({ children, idCategory }: AlertUpdateCategoryProps) => {
+const AlertUpdateCategory = ({ children, idCategory, categoryName }: AlertUpdateCategoryProps) => {
     const { register, handleSubmit, handleUpdate, errors } = useHookUpdateCategory();
 
     const styleForm = "flex flex-col gap-2.5";
@@ -41,10 +42,10 @@ const AlertUpdateCategory = ({ children, idCategory }: AlertUpdateCategoryProps)
                         <label>Update Category Name</label>
                         <form onSubmit={handleSubmit((data) => handleUpdate(data, idCategory))} className={styleForm}>
                             <section>
-                                <Input {...register.name} type="text" placeholder="Category Name" />
+                                <Input {...register.name} type="text" placeholder="Category Name" defaultValue={categoryName} />
                                  {errors.name && <span className={errorStyle} data-aos="fade">{errors.name.message}</span>}
                                </section>
-                            <ButtonDown children={"Update"} buttonPosition="justify-end" />
+                            <ButtonDown id="btnUpdate" children={"Update"} buttonPosition="justify-end" />
                         </form>
                     </section> 
                 </AlertDialogDescription>

@@ -14,6 +14,7 @@ import useHookDeleteCategory from "@/hook/Categoary/hookDeleteCategory";
 type AlertLogoutProps = {
     children: React.ReactNode;
     IdAuthor: number
+    categoryName?: string;
 };
 
 const AlertDeleteCategory = ({ children: children, IdAuthor }: AlertLogoutProps) => {
@@ -40,7 +41,7 @@ const AlertDeleteCategory = ({ children: children, IdAuthor }: AlertLogoutProps)
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <button className={`${styleLinkOut} ${MotionOut}`} onClick={() => {handleDelete(IdAuthor!)}}>Confirm</button>
+                    <button id="btnDelete" className={`${styleLinkOut} ${MotionOut}`} onClick={() => {handleDelete(IdAuthor!)}}>Confirm</button>
                 </AlertDialogFooter>
             </AlertDialogContent>
         </AlertDialog>
