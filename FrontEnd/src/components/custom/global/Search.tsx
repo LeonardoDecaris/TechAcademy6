@@ -15,6 +15,7 @@ const Search = ({ inputValue, onChange, handleSearch, icons }: PropsSearch) => {
                 value={inputValue}
                 className={`focus:outline-none w-full text-sm`}
                 onChange={onChange}
+                id="search"
             />
             <button type="submit">
                 <img src={icons} className="w-7" alt="Buscar" />

@@ -100,7 +100,6 @@ test('Cadastro com senha sem 8 caracteres', async ({ page }) => {
     expect(await errorSpan.isVisible()).toBeTruthy(); 
 });
 
-
 test('Cadastro com senha fraca', async ({ page }) => {
     await page.goto('http://localhost:5173/login');
     const signUp = page.getByRole('button', { name: 'Sign up' });

@@ -93,9 +93,7 @@ test('Login com sucesso redireciona para home', async ({ page }) => {
 
 test('Abrir pagina de cadastro', async ({ page }) => {
     await page.goto('http://localhost:5173/login');
-
     await page.locator("#register").click();
-
     const title = await page.getByText("REGISTER");
     expect(title).toBeTruthy();
 });
