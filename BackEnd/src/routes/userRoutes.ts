@@ -13,10 +13,10 @@ const router = express.Router();
 router.get("/users", getAllUsers);
 router.get("/users/paginated", getPaginatedUsers);
 router.get("/users/paginated/:page", getPaginatedUsers);
-router.get("/users/:id", authMiddleware, getUserById);
+router.get("/users/:id", getUserById);
 router.post("/users", createUser);
-router.put("/users/:id", authMiddleware, updateUser);
-router.delete("/users/:id", authMiddleware, deleteUserById);
+router.put("/users/:id", updateUser);
+router.delete("/users/:id", deleteUserById);
 
 // DOCUMETACAO SWAGGER
 

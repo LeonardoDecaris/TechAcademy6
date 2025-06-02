@@ -52,12 +52,12 @@ const BuscarSound = () => {
                         )}
                         {paginatedSounds.map((item, index) => (
                             <ComponentSound
+                                src={`/audio/${item.directory}`}
                                 key={index}
                                 name={item.name}
                                 author={item.author?.name}
                                 category={item.category?.name}
                                 IdSound={item.id}
-                                src={`../../../public/audio/${item.directory}`}
                                 className2="flex"
                                 className1="hidden"
                             />

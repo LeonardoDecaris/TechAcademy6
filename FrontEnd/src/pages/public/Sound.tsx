@@ -53,7 +53,7 @@ const Sound = () => {
                         )}
                         {paginatedSounds.map((item, index) => (
                             <ComponentSound
-                                src={`../../../public/audio/${item.directory}`}
+                                src={`/audio/${item.directory}`}
                                 key={index}
                                 name={item.name}
                                 author={item.author?.name}
